@@ -1,0 +1,33 @@
+------------------
+Your Quote Request
+------------------
+
+{sender_display_name} has answered to your quote request:
+
+​
+{comment_message}
+
+Sent by {sender_display_name} on {record_created}
+
+​
+SEE ALL COMMENTS ( {quote_url} )
+
+​
+© 2015 Collectrium, Inc. A Christie's Company. All rights
+reserved.
+
+6 West 48th Street, Floor 6 New York, NY 10036, USA
+
+If you feel you have received this email in error,
+please contact
+support@collectrium.com
+( mailto:support@collectrium.com )
+
+( https://twitter.com/collectrium )
+
+( https://instagram.com/collectrium )
+
+( https://www.facebook.com/collectrium )
+
+( https://vimeo.com/collectrium )
+

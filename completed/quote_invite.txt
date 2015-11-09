@@ -1,0 +1,28 @@
+-----------------
+New Quote Request
+-----------------
+
+{sender_display_name} requested Shipping and Transportation quote
+for {items_count} objects from Collectrium.
+
+SEE QUOTE DETAILS ( {quote_url} )
+
+​
+
+© 2015 Collectrium, Inc. A Christie's Company. All rights
+reserved.
+
+6 West 48th Street, Floor 6 New York, NY 10036, USA
+
+If you feel you have received this email in error,
+please contact
+support@collectrium.com
+( mailto:support@collectrium.com )
+
+( https://twitter.com/collectrium )
+
+( https://instagram.com/collectrium )
+
+( https://www.facebook.com/collectrium )
+
+( https://vimeo.com/collectrium )
