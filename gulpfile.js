@@ -3,7 +3,7 @@ var gulp = require('gulp'),
     include = require("gulp-include");
 
 gulp.task('inline_styles', function() {
-    return gulp.src('./before_inliner/*.html')
+    return gulp.src('./before_inliner/template.html')
         .pipe(include())
             .on('error', console.log)
         .pipe(inlineCss({

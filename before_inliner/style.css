@@ -179,6 +179,71 @@ table[class="pre-footer"]{
     padding-right: 30px;
 }
 
+/* add-first-object*/
+
+h3[class="sub-title2"] {
+    margin: 0;
+    padding-top: 41px;
+    padding-bottom: 10px;
+    font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif;
+    font-weight: normal;
+    font-size: 26px;
+    color: #AD2329;
+    letter-spacing: 0px;
+    line-height: 1em;
+}
+
+[class="f-object-l-text"]{
+    padding-right: 18px;
+}
+
+[class="f-object-r-image"]{
+    vertical-align: top;
+    width: 280px;
+}
+[class="f-object-r-image"] img{
+    width: inherit;
+}
+
+[class="nambered-list"]{
+    padding-bottom: 30px;
+}
+
+[class="nl-number"]{
+    font-family : Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif;
+    font-weight : normal;
+    font-size : 32px;
+    letter-spacing : 0.3px;
+    line-height: 1em;
+    vertical-align: top;
+    padding-right: 13px;
+    padding-top: 6px;
+    padding-left: 20px;
+}
+
+[class="nl-text"]{
+    vertical-align: top;
+    padding-top: 20px;
+}
+
+/* go-mobile page */
+
+[class="image-middle-wrapper"]{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Leverage auction results */
+
+/* Customize your account to your needs */
+
+/* Track the location */
+
+/* Organize your objects */
+
+/* Onboarding help */
+
 @media only screen and (max-width:540px) {
     table[class="t-content"], table[class="t-footer"] {
         max-width : 540px !important;
