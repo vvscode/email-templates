@@ -5,9 +5,10 @@ An invitation for you
 You have been to invited to access {{collection name}}
 
 
-Hello,
+Dear {{тот_кого_пригласили first name}} {{тот_кого_пригласили last name}},
 
-I would like to invite you to view my Collectrium account. Please click the button below to create your user account.
+I would like to invite you to view my Collectrium account.
+Please sign in with your Collectrium credentials to access my collection.
 
 
 Sincerely,
@@ -15,7 +16,7 @@ Sincerely,
 ​
 
 
-CREATE ACCOUNT ( {url} )
+ACCEPT INVITATION ( {url} )
 
 ​
 
@@ -28,12 +29,3 @@ If you feel you have received this email in error,
 please contact
 support@collectrium.com
 ( mailto:support@collectrium.com )
-
-( https://twitter.com/collectrium )
-
-( https://instagram.com/collectrium )
-
-( https://www.facebook.com/collectrium )
-
-( https://vimeo.com/collectrium )
-

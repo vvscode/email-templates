@@ -3,15 +3,16 @@ var gulp = require('gulp'),
     include = require("gulp-include");
 
 gulp.task('inline_styles', function() {
-    return gulp.src('./before_inliner/template.html')
+    var launched = true;
+    return gulp.src('./before_inliner/template*.html')
         .pipe(include())
             .on('error', console.log)
         .pipe(inlineCss({
-            applyStyleTags: true,
-            applyLinkTags: true,
-            removeStyleTags: true,
-            removeLinkTags: true,
-            preserveMediaQueries: true
+            applyStyleTags: launched,
+            applyLinkTags: launched,
+            removeStyleTags: launched,
+            removeLinkTags: launched,
+            preserveMediaQueries: launched
         }))
             .on('error', console.log)
         .pipe(gulp.dest('after_inliner/'));

@@ -30,7 +30,7 @@ table[class="t-header"] {
     padding-bottom : 29px;
 }
 table[class="t-content"] {
-    padding-bottom : 50px;
+    /*padding-bottom : 50px;*/
 }
 td[class="td-content"]{
     padding-left : 30px;
@@ -38,7 +38,7 @@ td[class="td-content"]{
 }
 table[class="t-footer"] {
     margin: auto;
-    padding-top : 48px;
+    padding-top : 0px;
     padding-bottom : 15px;
     padding-left : 20px;
     padding-right : 20px;
@@ -53,25 +53,24 @@ a[class="two-footer-link"]{
     padding-right: 10px;
 }
 img[class="head_img"] {
-    width : 192px;
-    height : 52px;
-    display : inline-block;
+    /*display : inline-block;*/
 }
 h2[class="title"] {
     margin : 0;
-    padding-top : 32px;
-    padding-bottom : 29px;
+    margin-top : 32px;
+    margin-bottom : 29px;
     font-family : Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif;
     font-weight : normal;
     font-size : 35px;
     color : #AD2329;
     letter-spacing : 0.3px;
     line-height: 1em;
+    text-align: center;
 }
 h3[class="sub-title"] {
     margin : 0;
-    padding-top : 32px;
-    padding-bottom : 29px;
+    margin-top : 32px;
+    margin-bottom : 29px;
     font-family : Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif;
     font-weight : normal;
     font-size : 24px;
@@ -82,17 +81,26 @@ h3[class="sub-title"] {
 .align_center {
     text-align : center;
 }
-a[class="button"] {
+
+[class="btn-wrap"]{
     margin-top : 38px;
+}
+
+a[class="button"] {
     background-color : #AD2329;
     color : #ffffff;
     display : inline-block;
-    padding-left : 40px;
-    padding-right : 40px;
     font-size : 13px;
-    line-height : 37px;
     text-align : center;
     text-decoration : none;
+    font-weight: bold;
+
+    border-color: #AD2329;
+    border-style: solid;
+    border-top-width: 10px;
+    border-right-width: 35px;
+    border-bottom-width: 10px;
+    border-left-width: 35px;
 }
 img[class="quote-bg-img"] {
     width : 100%;
@@ -160,8 +168,8 @@ table[class="newsletter-item invert"] div[class="newsletter-description"]{
 }
 table[class="newsletter-item"] h3[class="sub-title"],
 table[class="newsletter-item invert"] h3[class="sub-title"]{
-    padding-top: 0px;
-    padding-bottom: 20px;
+    margin-top: 0px;
+    margin-bottom: 20px;
 }
 
 table[class="pre-footer"]{
@@ -171,20 +179,62 @@ table[class="pre-footer"]{
     margin: auto;
     width: 100%;
 }
+
+[class="pf-wrapper-text"]{
+    padding-top: 16px;
+}
 [class="pre-footer-text"]{
     margin: auto;
-    max-width: 600px;
-    padding-top: 16px;
     padding-left: 30px;
     padding-right: 30px;
+}
+
+[class="newsletter-item"] div[class="btn-wrap"]{
+    margin-top: 22px;
+    text-align: left;
+    padding-left: 190px;
+}
+[class="newsletter-item invert"] div[class="btn-wrap"]{
+    margin-top: 22px;
+    text-align: left;
+}
+
+[class="newsletter-h-bg"]{
+    background-position: center;
+    background-repeat: no-repeat;
+}
+[class="newsletter-h-text"]{
+    max-width: 600px;
+    width: 100% !important;
+}
+[class="article-h-date"]{
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: 10px;
+    background-color: #000000;
+    color: #FFFFFF;
+
+    border-style: solid;
+    border-top-width: 5px;
+    border-right-width: 20px;
+    border-bottom-width: 5px;
+    border-left-width: 20px;
+    border-color: #000000;
+}
+[class="article-h-title"]{
+    text-align: center;
+    font-size: 37px;
+    color: #FFFFFF;
+    font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif;
+    margin-top: 25px;
 }
 
 /* add-first-object*/
 
 h3[class="sub-title2"] {
     margin: 0;
-    padding-top: 41px;
-    padding-bottom: 10px;
+    margin-top: 41px;
+    margin-bottom: 10px;
     font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif;
     font-weight: normal;
     font-size: 26px;
@@ -206,7 +256,7 @@ h3[class="sub-title2"] {
 }
 
 [class="nambered-list"]{
-    padding-bottom: 30px;
+    margin-bottom: 30px;
 }
 
 [class="nl-number"]{
@@ -234,6 +284,10 @@ h3[class="sub-title2"] {
     margin-bottom: 40px;
 }
 
+[class="image-middle-wrapper"] img{
+    width: 100% !important;
+}
+
 /* Leverage auction results */
 
 /* Customize your account to your needs */
@@ -242,7 +296,70 @@ h3[class="sub-title2"] {
 
 /* Organize your objects */
 
+[class="ml-marked"]{
+    font-family : Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif;
+    font-weight : normal;
+    font-size : 32px;
+    letter-spacing : 0.3px;
+    line-height: 1em;
+    vertical-align: top;
+    padding-right: 13px;
+    padding-top: 12px;
+    padding-left: 20px;
+}
+
+[class="ml-text"]{
+    vertical-align: top;
+    padding-top: 20px;
+}
+
 /* Onboarding help */
+
+/* invitation-viewing-room.html */
+table[class="gallery-table"]{
+    width: 100%;
+}
+[class="intro"]{
+    margin-top: 15px;
+    margin-bottom: 27px;
+}
+table[class="gallery-item"]{
+    padding-bottom: 10px;
+    width: 100%;
+}
+table[class="gallery-item"] img{
+    max-width: 120px;
+    max-height: 125px;
+    display: block;
+    margin: auto;
+    padding-bottom: 25px;
+}
+div[class="image-cell"]{
+    width: 120px;
+    padding-right: 30px;
+    float: left;
+}
+div[class="descr-cell"]{
+
+}
+div[class="descr-cell"] p{
+    line-height: 1.7em;
+}
+table[class="more-object"] {
+    width: 100%;
+    text-align: center;
+    background-color: #F1F1F1;
+    line-height: 23px;
+}
+
+/*welcome-from-your-specialist*/
+td[class="avarat-img"]{
+    padding-left: 40px;
+}
+td[class="avatar-descr"]{
+    padding-left: 20px;
+    padding-right: 35px;
+}
 
 @media only screen and (max-width:540px) {
     table[class="t-content"], table[class="t-footer"] {
@@ -255,12 +372,12 @@ h3[class="sub-title2"] {
     }
     h2[class="title"] {
         font-size : 21px !important;
-        padding-top : 20px !important;
-        padding-bottom : 17px !important;
+        margin-top: 20px !important;
+        margin-bottom: 17px !important;
     }
     h3[class="sub-title"] {
-        padding-top : 16px !important;
-        padding-bottom : 14px !important;
+        margin-top : 16px !important;
+        margin-bottom : 14px !important;
         font-size : 18px !important;
     }
     td[class="td-content"]{
@@ -285,7 +402,7 @@ h3[class="sub-title2"] {
         margin-top : 20px !important;
     }
     table[class="t-content"] {
-        padding-bottom : 26px !important;
+        margin-bottom : 26px !important;
     }
     table[class="t-footer"] {
         padding-top : 32px !important;
@@ -310,7 +427,53 @@ h3[class="sub-title2"] {
         padding-left: 20px !important;
         padding-right: 20px !important;
     }
+
+    [class="newsletter-item"] div[class="btn-wrap"],
+    [class="newsletter-item invert"] div[class="btn-wrap"]{
+        text-align: center !important;
+        margin: 0 !important;
+        padding: 0!important;
+    }
+
+    [class="article-h-date"]{
+        font-size: 13px !important;
+    }
+    [class="article-h-title"]{
+        font-size: 25px !important;
+        margin-top: 25px !important;
+    }
+
+    /* invitation-viewing-room.html */
+    [class="intro"]{
+        margin-bottom: 16px;
+    }
+    table[class="gallery-item"] img{
+        max-width: 100% !important;
+        max-height: 135px !important;
+    }
+    div[class="image-cell"]{
+        width: 100% !important;
+        padding: 0 !important;
+        float: none !important;
+    }
+    div[class="descr-cell"]{
+        padding-bottom: 20px !important;
+    }
+
+    /* add-first-object*/
+    h3[class="sub-title2"] {
+        margin-top: 20px !important;
+        margin-bottom: 0px !important;
+        font-size: 18px !important;
+    }
+
+    /*welcome-from-your-specialist*/
+    td[class="avarat-img"]{
+        padding-left: 20px !important;
+    }
+
 }
 #airmail-line {
     margin: 0 -10px !important;
 }
+
