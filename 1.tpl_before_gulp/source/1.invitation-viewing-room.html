@@ -1,0 +1,79 @@
+<table class="t-content" cellpadding="0" cellspacing="0" align="center" border="0">
+  <tbody>
+  <tr>
+    <td class="td-content" valign="top" style="font-size: 14px;padding-left: 30px;padding-right: 30px;">
+      <h2 class="title">Invitation to private viewing room</h2>
+
+      <p class="intro">Hello, you have been invited to private viewing room by <b>{{recipient_display_name}}</b>.</p>
+
+      <p style="color: #AD2329; margin-bottom: 10px;">{{collectables_count}} objects shared:</p>
+
+
+      <table class="gallery-table" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td>
+
+            {% for collectable in collectables %}
+              <!--[if !mso]>-->
+              <table class="gallery-item" border="0" cellspacing="0" cellpadding="0">
+                <!--<![endif]--><!--[if mso]>
+                <table class="gallery-item" border="0" cellspacing="0" cellpadding="5" style="padding-bottom: 35px;">
+                <![endif]-->
+                <tr>
+                  <td>
+                    <div class="image-cell">
+                      <a href="{{url}}" target="_blank">
+                        <img src="{{collectable.img}}">
+                      </a>
+                    </div>
+                    <div class="descr-cell">
+{% if collectable.artist_name %}<p><b>{{collectable.artist_name}}</b></p>
+  {% if collectable.title %} <p><i>{{collectable.title}}</i></p> {% endif %}
+  {% if collectable.description %} <p>{{collectable.description}}</p> {% endif %}
+  {% if collectable.medium %} <p>{{collectable.medium}}</p> {% endif %}
+  {% if collectable.size %} <p>{{collectable.size}}</p> {% endif %}
+  {% if collectable.date %} <p>{{collectable.date}}</p> {% endif %}
+  {% if collectable.value %} <p>{{collectable.value}}</p> {% endif %}
+  {% if collectable.provenance %} <p>{{collectable.provenance}}</p> {% endif %}
+  {% if collectable.exhibited %} <p>{{collectable.exhibited}}</p> {% endif %}
+  {% if collectable.literature %} <p>{{collectable.literature}}</p> {% endif %}
+{% else %}
+  {% if collectable.title %} <p><i>{{collectable.title}}</i></p> {% endif %}
+  {% if collectable.date %} <p>{{collectable.date}}</p> {% endif %}
+  {% if collectable.description %} <p>{{collectable.description}}</p> {% endif %}
+  {% if collectable.medium %} <p>{{collectable.medium}}</p> {% endif %}
+  {% if collectable.size %} <p>{{collectable.size}}</p> {% endif %}
+  {% if collectable.value %} <p>{{collectable.value}}</p> {% endif %}
+  {% if collectable.provenance %} <p>{{collectable.provenance}}</p> {% endif %}
+  {% if collectable.exhibited %} <p>{{collectable.exhibited}}</p> {% endif %}
+  {% if collectable.literature %} <p>{{collectable.literature}}</p> {% endif %}
+{% endif %}
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            {% endfor %}
+
+
+            {% if collecrables_count - collectables_displayed_count >= 0 %}
+            <table height="23" class="more-object" valign="middle">
+              <tr>
+                <td><a href="{{url}}" target="_blank" style="text-decoration: initial;"><font color="#000000">+ {{items_count - items_displayed_count}} more objects</font></a></td>
+              </tr>
+            </table>
+            {% endif %}
+
+          </td>
+        </tr>
+      </table>
+
+      <div class="align_center">
+        <div class="btn-wrap">
+          <a href="{{url}}" class="button" target="_blank">GO TO PRIVATE VIEWING ROOM</a>
+        </div>
+      </div>
+
+    </td>
+  </tr>
+  </tbody>
+</table>

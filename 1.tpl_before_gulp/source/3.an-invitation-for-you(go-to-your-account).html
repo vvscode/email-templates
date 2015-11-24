@@ -6,26 +6,25 @@
   <tbody>
   <tr>
     <td class="td-content" valign="top">
-      <h2 class="title">Your quote request</h2>
+      <h2 class="title">An invitation for you</h2>
       <p style="padding-bottom: 26px;">
-        Momart Specialist has answered to your quote request:
+        You have been to invited to access <b>{{collection_name}}</b>.
       </p>
 
       <!--[if !mso]>--><img class="quote-bg-img" src="https://s3.amazonaws.com/collectriumdev-assets/quote_email/top-quote.png"><!--<![endif]-->
       <!--[if !mso]>--><div class="quote"><!--<![endif]--><!--[if mso]><div style="background-color: #FFFFFF; padding-bottom: 15px; padding-top: 17px; width: 100%;"><![endif]-->
         <div class="spaces-left-right">
-          <p class="padding-bottom">{{comment_message}}</p>
-          [[tpl3.file_if]]
-          <a class="att-url" href="{{att-url}}" >[[tpl3.file_name]]</a>
-          [[endif]]
-          <p class="quote-detail" >Sent by {{sender_display_name}} on {{record_created}}</p>
+          <p>Dear {{recipient_display_name}},</p><br/>
+          <p class="padding-bottom">I would like to invite you to view my Collectrium account. Please sign in with your Collectrium credentials to access my collection.</p>
         </div>
       </div>
       <!--[if !mso]>--><img class="quote-bg-img" src="https://s3.amazonaws.com/collectriumdev-assets/quote_email/bottom-quote.png"><!--<![endif]-->
+      <p style="padding-top: 20px;">Sincerely,</p>
+      <b>{{sender_display_name}}</b>
 
       <div class="align_center">
         <div class="btn-wrap">
-          <a href="{url}" class="button" target="_blank">SEE ALL COMMENTS</a>
+          <a href="{{url}}" class="button" target="_blank">GO TO YOUR ACCOUNT</a>
         </div>
       </div>
 

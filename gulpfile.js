@@ -4,12 +4,12 @@ var gulp = require('gulp'),
     nunjucksRender = require('gulp-nunjucks-render'),
     replace = require('gulp-replace');
 
-var launched = true;
+var launched = true; /* launch inline style */
 
-nunjucksRender.nunjucks.configure(['after_inliner/'], {watch: false});
+nunjucksRender.nunjucks.configure(['1.tpl_before_gulp/'], {watch: false});
 
 gulp.task('inline_styles', function() {
-    return gulp.src('./before_inliner/template*.html')
+    return gulp.src('./1.tpl_before_gulp/*.html')
         .pipe(include())
             .on('error', console.log)
         .pipe(inlineCss({
@@ -20,14 +20,14 @@ gulp.task('inline_styles', function() {
             preserveMediaQueries: launched
         }))
             .on('error', console.log)
-        .pipe(gulp.dest('after_inliner/'));
+        .pipe(gulp.dest('2.tpl_complite/'));
 });
 
 gulp.task('inline_styles_and_nunjucks', function() {
     delete require.cache[require.resolve('./data.js')];
     var data = require('./data.js');
 
-    return gulp.src('./before_inliner/template*.html')
+    return gulp.src('./1.tpl_before_gulp/*.html')
         .pipe(include())
             .on('error', console.log)
         .pipe(nunjucksRender(data.DATA))
@@ -40,32 +40,15 @@ gulp.task('inline_styles_and_nunjucks', function() {
             preserveMediaQueries: launched
         }))
             .on('error', console.log)
-        .pipe(gulp.dest('after_nunjucks/'));
-});
-
-gulp.task('for_dmitriy', function() {
-    return gulp.src('./before_inliner/1*.html')
-        .pipe(include())
-        .on('error', console.log)
-        .pipe(inlineCss({
-            applyStyleTags: launched,
-            applyLinkTags: launched,
-            removeStyleTags: launched,
-            removeLinkTags: launched,
-            preserveMediaQueries: launched
-        }))
-        .on('error', console.log)
-        .pipe(replace('tpl1.', ''))
-            .on('error', console.log)
-        .pipe(gulp.dest('for_dmitriy/'));
+        .pipe(gulp.dest('3.tpl_complite_simple_content/'));
 });
 
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-    gulp.watch(['./before_inliner/**','./data.js'], ['inline_styles','inline_styles_and_nunjucks', 'for_dmitriy']);
+    gulp.watch(['./1.tpl_before_gulp/**','./data.js'], ['inline_styles','inline_styles_and_nunjucks']);
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['watch', 'inline_styles', 'inline_styles_and_nunjucks', 'for_dmitriy']);
+gulp.task('default', ['watch', 'inline_styles', 'inline_styles_and_nunjucks']);
 

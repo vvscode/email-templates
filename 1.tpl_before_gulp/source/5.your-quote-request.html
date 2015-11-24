@@ -1,29 +1,31 @@
 <!--[if !mso]>-->
 <table class="t-content" cellpadding="0" cellspacing="0" align="center" border="0">
-  <!--<![endif]--><!--[if mso]>
-  <table class="t-content" cellpadding="0" cellspacing="0" align="center" border="0" width="540">
-  <![endif]-->
+<!--<![endif]--><!--[if mso]>
+<table class="t-content" cellpadding="0" cellspacing="0" align="center" border="0" width="540">
+<![endif]-->
   <tbody>
   <tr>
     <td class="td-content" valign="top">
-      <h2 class="title">An invitation for you</h2>
+      <h2 class="title">Your quote request</h2>
       <p style="padding-bottom: 26px;">
-        You have been to invited to access <b>{{collection name}}</b>.
+        Momart Specialist has answered to your quote request:
       </p>
 
       <!--[if !mso]>--><img class="quote-bg-img" src="https://s3.amazonaws.com/collectriumdev-assets/quote_email/top-quote.png"><!--<![endif]-->
       <!--[if !mso]>--><div class="quote"><!--<![endif]--><!--[if mso]><div style="background-color: #FFFFFF; padding-bottom: 15px; padding-top: 17px; width: 100%;"><![endif]-->
-      <div class="spaces-left-right">
-        <p>Hello,</p><br/><p class="padding-bottom">I would like to invite you to view my Collectrium account. Please click the button below to create your user account.</p>
+        <div class="spaces-left-right">
+          <p class="padding-bottom">{{comment_message}}</p>
+          {% if file_name %}
+          <a class="att-url" href="{{file_url}}" >{{file_name}}</a>
+          {% endif %}
+          <p class="quote-detail" >Sent by {{sender_display_name}} on {{record_created_date}}</p>
+        </div>
       </div>
-    </div>
       <!--[if !mso]>--><img class="quote-bg-img" src="https://s3.amazonaws.com/collectriumdev-assets/quote_email/bottom-quote.png"><!--<![endif]-->
-      <p style="padding-top: 20px;">Sincerely,</p>
-      <b>{{the_one_who_invited_display_name}}</b>
 
       <div class="align_center">
         <div class="btn-wrap">
-          <a href="{url}" class="button" target="_blank">ACCEPT INVITATION</a>
+          <a href="{{url}}" class="button" target="_blank">SEE ALL COMMENTS</a>
         </div>
       </div>
 
