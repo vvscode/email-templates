@@ -14,9 +14,11 @@
       <!--[if !mso]>--><img class="quote-bg-img" src="https://s3.amazonaws.com/collectriumdev-assets/quote_email/top-quote.png"><!--<![endif]-->
       <!--[if !mso]>--><div class="quote"><!--<![endif]--><!--[if mso]><div style="background-color: #FFFFFF; padding-bottom: 15px; padding-top: 17px; width: 100%;"><![endif]-->
         <div class="spaces-left-right">
-          <p class="padding-bottom">{comment_message}</p>
-          <a class="att-url" href="http://lol" >transportation-quote-answer.pdf</a>
-          <p class="quote-detail" >Sent by {sender_display_name} on {record_created}</p>
+          <p class="padding-bottom">{{comment_message}}</p>
+          [[tpl3.file_if]]
+          <a class="att-url" href="{{att-url}}" >[[tpl3.file_name]]</a>
+          [[endif]]
+          <p class="quote-detail" >Sent by {{sender_display_name}} on {{record_created}}</p>
         </div>
       </div>
       <!--[if !mso]>--><img class="quote-bg-img" src="https://s3.amazonaws.com/collectriumdev-assets/quote_email/bottom-quote.png"><!--<![endif]-->

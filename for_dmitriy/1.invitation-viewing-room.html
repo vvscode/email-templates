@@ -4,16 +4,16 @@
     <td class="td-content" valign="top" style="font-size: 14px;padding-left: 30px;padding-right: 30px;">
       <h2 class="title">Invitation to private viewing room</h2>
 
-      <p class="intro">Hello, you have been invited to private viewing room by <b>{{tpl1.recipient_display_name}}</b>.</p>
+      <p class="intro">Hello, you have been invited to private viewing room by <b>{{recipient_display_name}}</b>.</p>
 
-      <p style="color: #AD2329; margin-bottom: 10px;">{{tpl1.items_count}} objects shared:</p>
+      <p style="color: #AD2329; margin-bottom: 10px;">{{items_count}} objects shared:</p>
 
 
       <table class="gallery-table" border="0" cellpadding="0" cellspacing="0">
         <tr>
           <td>
 
-            {% for item in tpl1.items %}
+            {% for item in items %}
               <!--[if !mso]>-->
               <table class="gallery-item" border="0" cellspacing="0" cellpadding="0">
                 <!--<![endif]--><!--[if mso]>
@@ -22,7 +22,7 @@
                 <tr>
                   <td>
                     <div class="image-cell">
-                      <a href="{{tpl1.url_to_room}}" target="_blank">
+                      <a href="{{url_to_room}}" target="_blank">
                         <img src="{{item.img}}">
                       </a>
                     </div>
@@ -40,10 +40,10 @@
             {% endfor %}
 
 
-            {% if tpl1.items_count - tpl1.items_displayed_count >= 0 %}
+            {% if items_count - items_displayed_count >= 0 %}
             <table height="23" class="more-object" valign="middle">
               <tr>
-                <td><a href="{{tpl1.url_to_room}}" target="_blank" style="text-decoration: initial;"><font color="#000000">+ {{tpl1.items_count - tpl1.items_displayed_count}} more objects</font></a></td>
+                <td><a href="{{url_to_room}}" target="_blank" style="text-decoration: initial;"><font color="#000000">+ {{items_count - items_displayed_count}} more objects</font></a></td>
               </tr>
             </table>
             {% endif %}
@@ -54,7 +54,7 @@
 
       <div class="align_center">
         <div class="btn-wrap">
-          <a href="{{tpl1.url_to_room}}" class="button" target="_blank">GO TO PRIVATE VIEWING ROOM</a>
+          <a href="{{url_to_room}}" class="button" target="_blank">GO TO PRIVATE VIEWING ROOM</a>
         </div>
       </div>
 
