@@ -103,7 +103,7 @@ a[class="button"] {
     border-left-width: 35px;
 }
 img[class="quote-bg-img"] {
-    width : 100%;
+    width : 100% !important;
     display : block;
 }
 div[class="spaces-left-right"] {
@@ -340,7 +340,6 @@ div[class="image-cell"]{
     float: left;
 }
 div[class="descr-cell"]{
-
 }
 div[class="descr-cell"] p{
     line-height: 1.7em;
@@ -359,6 +358,13 @@ td[class="avarat-img"]{
 td[class="avatar-descr"]{
     padding-left: 20px;
     padding-right: 35px;
+}
+
+
+@media only screen and (min-width:540px) {
+    div[class="descr-cell"]{
+        margin-left: 150px;
+    }
 }
 
 @media only screen and (max-width:540px) {
@@ -458,6 +464,7 @@ td[class="avatar-descr"]{
     }
     div[class="descr-cell"]{
         padding-bottom: 20px !important;
+        margin-left: 0 !important;
     }
 
     /* add-first-object*/

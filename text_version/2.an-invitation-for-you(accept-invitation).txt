@@ -1,0 +1,31 @@
+----------------------
+An invitation for you
+----------------------
+
+You have been to invited to access {{collection_name}}
+
+
+Hello,
+
+I would like to invite you to view my Collectrium account.
+Please click the button below to create your user account.
+
+
+Sincerely,
+{{sender_display_name}}
+​
+
+
+ACCEPT INVITATION ( {{url}} )
+
+​
+
+© 2015 Collectrium, Inc. A Christie's Company. All rights
+reserved.
+
+6 West 48th Street, Floor 6 New York, NY 10036, USA
+
+If you feel you have received this email in error,
+please contact
+support@collectrium.com
+( mailto:support@collectrium.com )

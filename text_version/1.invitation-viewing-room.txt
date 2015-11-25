@@ -1,0 +1,23 @@
+----------------------------------
+Invitation to private viewing room
+----------------------------------
+
+Hello,
+
+you have been invited to private viewing room by {{recipient_display_name}}.
+
+{{collectables_count}} objects shared.
+
+GO TO PRIVATE VIEWING ROOM ( {{url}} )
+
+​
+
+© 2015 Collectrium, Inc. A Christie's Company. All rights
+reserved.
+
+6 West 48th Street, Floor 6 New York, NY 10036, USA
+
+If you feel you have received this email in error,
+please contact
+support@collectrium.com
+( mailto:support@collectrium.com )

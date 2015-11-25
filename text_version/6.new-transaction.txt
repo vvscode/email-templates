@@ -1,0 +1,27 @@
+-----------------------------------------
+Your transaction invoice from Collectrium
+-----------------------------------------
+
+
+Please find your invoice attached below.
+
+
+Hi {{recipient_first_name}},
+
+{{comment_message}}
+
+
+Sincerely,
+{{sender_display_name}}
+
+​
+
+© 2015 Collectrium, Inc. A Christie's Company. All rights
+reserved.
+
+6 West 48th Street, Floor 6 New York, NY 10036, USA
+
+If you feel you have received this email in error,
+please contact
+support@collectrium.com
+( mailto:support@collectrium.com )
