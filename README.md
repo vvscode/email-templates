@@ -1,5 +1,5 @@
 # email-templates
-Email templates for backend and marketing team.
+Email templates for backend and marketing team. <br>
 
 1.tpl_before_gulp/source/ -- source email adresses, to make changes here
 2.tpl_complite/ -- an email with tags
