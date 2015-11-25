@@ -1,8 +1,7 @@
 var gulp = require('gulp'),
     inlineCss = require('gulp-inline-css'),
     include = require("gulp-include"),
-    nunjucksRender = require('gulp-nunjucks-render'),
-    replace = require('gulp-replace');
+    nunjucksRender = require('gulp-nunjucks-render');
 
 var launched = true; /* launch inline style */
 
@@ -51,4 +50,3 @@ gulp.task('watch', function() {
 
 // The default task (called when you run `gulp` from cli)
 gulp.task('default', ['watch', 'inline_styles', 'inline_styles_and_nunjucks']);
-
