@@ -83,7 +83,7 @@ h3[class="sub-title"] {
 }
 
 [class="btn-wrap"]{
-    margin-top : 38px;
+    margin-top : 35px;
 }
 
 a[class="button"] {
@@ -122,10 +122,9 @@ a[class="att-url"] {
 }
 p[class="quote-detail"] {
     color : #a4a4a4;
-    padding-bottom : 3px;
+    margin-bottom : 3px;
     font-size : 12px;
-    display : inherit;
-    padding-top : 10px;
+    margin-top : 10px;
 }
 p[class="padding-bottom"] {
     padding-bottom : 13px;
@@ -409,11 +408,10 @@ td[class="avatar-descr"]{
 }
 
 /* m12.knowledge-base*/
-/*
-[class="nambered-list welcome-to-collectrium"]{
-    margin-bottom: 0px;
+[class="specific-button-position-for-knowledge-base-page"]{
+    margin-right: 58px;
+    text-align: center;
 }
-*/
 
 @media only screen and (min-width:540px) {
     div[class="descr-cell"]{
@@ -458,7 +456,7 @@ td[class="avatar-descr"]{
         padding-left : 20px !important;
         padding-right : 20px !important;
     }
-    a[class="button"] {
+    [class="btn-wrap"] {
         margin-top : 20px !important;
     }
     table[class="t-content"] {
@@ -491,7 +489,6 @@ td[class="avatar-descr"]{
     [class="newsletter-item"] div[class="btn-wrap"],
     [class="newsletter-item invert"] div[class="btn-wrap"]{
         text-align: center !important;
-        margin: 0 !important;
         padding: 0!important;
     }
 
@@ -531,6 +528,12 @@ td[class="avatar-descr"]{
     /*welcome-from-your-specialist*/
     td[class="avatar-img"]{
         padding-left: 20px !important;
+    }
+
+    /* m12.knowledge-base*/
+    [class="specific-button-position-for-knowledge-base-page"]{
+        margin-right: 0px;
+        text-align: left;
     }
 
 }

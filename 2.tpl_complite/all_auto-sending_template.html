@@ -49,7 +49,7 @@
     padding-left: 20px !important;
     padding-right: 20px !important;
   }
-  a[class="button"] {
+  [class="btn-wrap"] {
     margin-top: 20px !important;
   }
   table[class="t-content"] {
@@ -79,7 +79,6 @@
   [class="newsletter-item"] div[class="btn-wrap"],
         [class="newsletter-item invert"] div[class="btn-wrap"] {
     text-align: center !important;
-    margin: 0 !important;
     padding: 0 !important;
   }
   [class="article-h-date"] {
@@ -112,6 +111,10 @@
   }
   td[class="avatar-img"] {
     padding-left: 20px !important;
+  }
+  [class="specific-button-position-for-knowledge-base-page"] {
+    margin-right: 0px;
+    text-align: left;
   }
 }
 </style>
@@ -203,7 +206,7 @@
         </table>
   
         <div class="align_center" style="text-align: center;">
-          <div class="btn-wrap" style="margin-top: 38px;">
+          <div class="btn-wrap" style="margin-top: 35px;">
             <a href="{{url}}" class="button" target="_blank" style="background-color: #AD2329; border-bottom-width: 10px; border-color: #AD2329; border-left-width: 35px; border-right-width: 35px; border-style: solid; border-top-width: 10px; color: #ffffff; display: inline-block; font-size: 13px; font-weight: bold; text-align: center; text-decoration: none;">GO TO PRIVATE VIEWING ROOM</a>
           </div>
         </div>
@@ -240,7 +243,7 @@
         <b>{{sender_display_name}}</b>
   
         <div class="align_center" style="text-align: center;">
-          <div class="btn-wrap" style="margin-top: 38px;">
+          <div class="btn-wrap" style="margin-top: 35px;">
             <a href="{{url}}" class="button" target="_blank" style="background-color: #AD2329; border-bottom-width: 10px; border-color: #AD2329; border-left-width: 35px; border-right-width: 35px; border-style: solid; border-top-width: 10px; color: #ffffff; display: inline-block; font-size: 13px; font-weight: bold; text-align: center; text-decoration: none;">ACCEPT INVITATION</a>
           </div>
         </div>
@@ -277,7 +280,7 @@
         <b>{{sender_display_name}}</b>
   
         <div class="align_center" style="text-align: center;">
-          <div class="btn-wrap" style="margin-top: 38px;">
+          <div class="btn-wrap" style="margin-top: 35px;">
             <a href="{{url}}" class="button" target="_blank" style="background-color: #AD2329; border-bottom-width: 10px; border-color: #AD2329; border-left-width: 35px; border-right-width: 35px; border-style: solid; border-top-width: 10px; color: #ffffff; display: inline-block; font-size: 13px; font-weight: bold; text-align: center; text-decoration: none;">GO TO YOUR ACCOUNT</a>
           </div>
         </div>
@@ -306,13 +309,13 @@
         <!--[if !mso]>--><div class="quote" style="background-color: #F7F7F7; padding-bottom: 15px; padding-top: 17px; width: 100%;"><!--<![endif]--><!--[if mso]><div style="background-color: #FFFFFF; padding-bottom: 15px; padding-top: 17px; width: 100%;"><![endif]-->
           <div class="spaces-left-right" style="padding-left: 40px; padding-right: 40px;">
             <p class="padding-bottom" style="font-size: 14px; line-height: 1.42em; margin: 0; padding-bottom: 13px;">{{comment_message}}</p>
-            <p class="quote-detail" style="color: #a4a4a4; display: inherit; font-size: 12px; line-height: 1.42em; margin: 0; padding-bottom: 3px; padding-top: 10px;">Sent by {{sender_display_name}} on {{record_created_date}}</p>
+            <p class="quote-detail" style="color: #a4a4a4; font-size: 12px; line-height: 1.42em; margin: 0; margin-bottom: 3px; margin-top: 10px;">Sent by {{sender_display_name}} on {{record_created_date}}</p>
           </div>
         </div>
         <!--[if !mso]>--><img class="quote-bg-img" src="https://s3.amazonaws.com/collectriumdev-assets/quote_email/bottom-quote.png" style="display: block; width: 100%;"><!--<![endif]-->
   
         <div class="align_center" style="text-align: center;">
-          <div class="btn-wrap" style="margin-top: 38px;">
+          <div class="btn-wrap" style="margin-top: 35px;">
             <a href="{{url}}" class="button" target="_blank" style="background-color: #AD2329; border-bottom-width: 10px; border-color: #AD2329; border-left-width: 35px; border-right-width: 35px; border-style: solid; border-top-width: 10px; color: #ffffff; display: inline-block; font-size: 13px; font-weight: bold; text-align: center; text-decoration: none;">SEE ALL COMMENTS</a>
           </div>
         </div>
@@ -344,13 +347,13 @@
             {% if file_name %}
             <a class="att-url" href="{{file_url}}" style="color: #AD2329; display: inherit; padding-bottom: 13px; text-decoration: underline;">{{file_name}}</a>
             {% endif %}
-            <p class="quote-detail" style="color: #a4a4a4; display: inherit; font-size: 12px; line-height: 1.42em; margin: 0; padding-bottom: 3px; padding-top: 10px;">Sent by {{sender_display_name}} on {{record_created_date}}</p>
+            <p class="quote-detail" style="color: #a4a4a4; font-size: 12px; line-height: 1.42em; margin: 0; margin-bottom: 3px; margin-top: 10px;">Sent by {{sender_display_name}} on {{record_created_date}}</p>
           </div>
         </div>
         <!--[if !mso]>--><img class="quote-bg-img" src="https://s3.amazonaws.com/collectriumdev-assets/quote_email/bottom-quote.png" style="display: block; width: 100%;"><!--<![endif]-->
   
         <div class="align_center" style="text-align: center;">
-          <div class="btn-wrap" style="margin-top: 38px;">
+          <div class="btn-wrap" style="margin-top: 35px;">
             <a href="{{url}}" class="button" target="_blank" style="background-color: #AD2329; border-bottom-width: 10px; border-color: #AD2329; border-left-width: 35px; border-right-width: 35px; border-style: solid; border-top-width: 10px; color: #ffffff; display: inline-block; font-size: 13px; font-weight: bold; text-align: center; text-decoration: none;">SEE ALL COMMENTS</a>
           </div>
         </div>
@@ -410,7 +413,7 @@
         </p>
   
         <div class="align_center" style="text-align: center;">
-          <div class="btn-wrap" style="margin-top: 38px;">
+          <div class="btn-wrap" style="margin-top: 35px;">
             <a href="{{url}}" class="button" target="_blank" style="background-color: #AD2329; border-bottom-width: 10px; border-color: #AD2329; border-left-width: 35px; border-right-width: 35px; border-style: solid; border-top-width: 10px; color: #ffffff; display: inline-block; font-size: 13px; font-weight: bold; text-align: center; text-decoration: none;">RESET YOUR PASSWORD</a>
           </div>
         </div>
@@ -438,7 +441,7 @@
         </p>
   
         <div class="align_center" style="text-align: center;">
-          <div class="btn-wrap" style="margin-top: 38px;">
+          <div class="btn-wrap" style="margin-top: 35px;">
             <a href="{{url}}" class="button" target="_blank" style="background-color: #AD2329; border-bottom-width: 10px; border-color: #AD2329; border-left-width: 35px; border-right-width: 35px; border-style: solid; border-top-width: 10px; color: #ffffff; display: inline-block; font-size: 13px; font-weight: bold; text-align: center; text-decoration: none;">SEE QUOTE DETAILS</a>
           </div>
         </div>
