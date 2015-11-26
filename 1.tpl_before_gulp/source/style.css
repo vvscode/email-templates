@@ -302,9 +302,9 @@ h3[class="sub-title2"] {
     letter-spacing : 0.3px;
     line-height: 1em;
     vertical-align: top;
-    padding-right: 13px;
+    padding-right: 24px;
     padding-top: 12px;
-    padding-left: 20px;
+    padding-left: 23px;
 }
 
 [class="ml-text"]{
@@ -525,6 +525,12 @@ td[class="avatar-descr"]{
         font-size: 18px !important;
     }
 
+    /* m10.welcomw-to-collectrium*/
+    [class="avatar-img welcome-to-collectrium"]{
+        padding-left: 0 !important;
+        font-size: 13px !important;
+    }
+
     /*welcome-from-your-specialist*/
     td[class="avatar-img"]{
         padding-left: 20px !important;
@@ -532,8 +538,8 @@ td[class="avatar-descr"]{
 
     /* m12.knowledge-base*/
     [class="specific-button-position-for-knowledge-base-page"]{
-        margin-right: 0px;
-        text-align: left;
+        margin-right: 0px !important;
+        text-align: left !important;
     }
 
 }
