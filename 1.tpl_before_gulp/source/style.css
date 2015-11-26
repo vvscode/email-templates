@@ -351,15 +351,69 @@ table[class="more-object"] {
     line-height: 23px;
 }
 
+/* m10.welcome-to-collectrium */
+[class="nambered-list welcome-to-collectrium"]{
+    margin-bottom: 30px;
+}
+
+[class="nambered-list welcome-to-collectrium"] [class="nl-number"]{
+    font-family : Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif;
+    font-weight : normal;
+    font-size : 32px;
+    letter-spacing : 0.3px;
+    line-height: 1em;
+    vertical-align: top;
+    padding-right: 13px;
+    padding-top: 6px;
+    padding-left: 20px;
+}
+
+[class="nambered-list welcome-to-collectrium"] [class="nl-text"]{
+    vertical-align: top;
+    padding-top: 0;
+    padding-bottom: 20px;
+}
+
+[class="nambered-list welcome-to-collectrium"] h3[class="sub-title2"] {
+    margin: 0;
+    margin-top: 12px;
+    font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif;
+    font-weight: normal;
+    font-size: 26px;
+    color: #AD2329;
+    letter-spacing: 0px;
+    line-height: 1em;
+}
+
+td[class="avatar-img welcome-to-collectrium"] {
+    padding-left: 62px;
+}
+
+p[class="mTop20"]{
+    margin-top: 20px;
+}
+
 /*welcome-from-your-specialist*/
-td[class="avarat-img"]{
+td[class="avatar-img"]{
     padding-left: 40px;
 }
+img[class="circle"]{
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+}
+
 td[class="avatar-descr"]{
     padding-left: 20px;
     padding-right: 35px;
 }
 
+/* m12.knowledge-base*/
+/*
+[class="nambered-list welcome-to-collectrium"]{
+    margin-bottom: 0px;
+}
+*/
 
 @media only screen and (min-width:540px) {
     div[class="descr-cell"]{
@@ -475,7 +529,7 @@ td[class="avatar-descr"]{
     }
 
     /*welcome-from-your-specialist*/
-    td[class="avarat-img"]{
+    td[class="avatar-img"]{
         padding-left: 20px !important;
     }
 

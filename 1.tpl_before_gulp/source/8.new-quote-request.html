@@ -8,7 +8,9 @@
     <td class="td-content" valign="top">
       <h2 class="title">New quote request</h2>
       <p style="padding-bottom: 26px;">
-        {{sender_display_name}} requested Shipping and Transportation quote for {{collectables_count}} objects from Collectrium.
+        {{sender_display_name}} requested Shipping and Transportation quote for {{collectables_count}}
+        {% if collectables_count > 1 %} objects {% else %} object {% endif %}
+        from Collectrium.
       </p>
 
       <div class="align_center">

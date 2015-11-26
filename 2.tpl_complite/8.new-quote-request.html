@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Your Quote Request</title>
+  <title>New quote request</title>
   <style type="text/css">
 @media only screen and (min-width:540px) {
   div[class="descr-cell"] {
@@ -110,7 +110,7 @@
     margin-bottom: 0px !important;
     font-size: 18px !important;
   }
-  td[class="avarat-img"] {
+  td[class="avatar-img"] {
     padding-left: 20px !important;
   }
 }
@@ -143,7 +143,9 @@
       <td class="td-content" valign="top" style="font-size: 14px; padding-left: 30px; padding-right: 30px;">
         <h2 class="title" style="color: #AD2329; font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif; font-size: 35px; font-weight: normal; letter-spacing: 0.3px; line-height: 1em; margin: 0; margin-bottom: 29px; margin-top: 32px; text-align: center;">New quote request</h2>
         <p style="font-size: 14px; line-height: 1.42em; margin: 0; padding-bottom: 26px;">
-          {{sender_display_name}} requested Shipping and Transportation quote for {{collectables_count}} objects from Collectrium.
+          {{sender_display_name}} requested Shipping and Transportation quote for {{collectables_count}}
+          {% if collectables_count > 1 %} objects {% else %} object {% endif %}
+          from Collectrium.
         </p>
   
         <div class="align_center" style="text-align: center;">
