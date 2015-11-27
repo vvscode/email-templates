@@ -10,10 +10,10 @@ a {
 }
 td, p, span {
     font-size : 14px;
+    line-height : 1.42em;
 }
 p {
     margin : 0;
-    line-height : 1.42em;
 }
 table[class="t-header"] {
     width: 100%;
@@ -24,6 +24,7 @@ table[class="t-header"] {
 table[class="t-content"], table[class="t-footer"]{
     max-width : 600px;
     min-width : 540px;
+
 }
 table[class="t-header"] {
     padding-top : 29px;
@@ -499,6 +500,16 @@ td[class="avatar-descr"]{
         font-size: 25px !important;
         margin-top: 25px !important;
     }
+
+    /* m2.newsletter-webinars */
+    [class="news"]{
+        margin-top: 41px;
+    }
+    [class="news"] [class="sub-title2"]{
+        margin-top: 0;
+    }
+
+
 
     /* invitation-viewing-room.html */
     [class="intro"]{
