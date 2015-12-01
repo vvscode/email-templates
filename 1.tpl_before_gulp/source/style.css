@@ -227,6 +227,7 @@ table[class="pre-footer"]{
     color: #FFFFFF;
     font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif;
     margin-top: 25px;
+    line-height: 1;
 }
 
 /* add-first-object*/
@@ -498,7 +499,6 @@ td[class="avatar-descr"]{
     }
     [class="article-h-title"]{
         font-size: 25px !important;
-        margin-top: 25px !important;
     }
 
     /* m2.newsletter-webinars */
