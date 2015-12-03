@@ -17,7 +17,10 @@ var DATA_ORIGINAL = {
                 "date": "simple",
                 "value": "simple",
                 "provenance": "simple",
-                "exhibited": "simple",
+                "exhibited_title": "Title",
+                "exhibited_start_date": "Dec 3, 2015",
+                "exhibited_end_date": "Dec 16, 2015",
+                "exhibited_location": "Minsk",
                 "literature": "simple"
             },
             {

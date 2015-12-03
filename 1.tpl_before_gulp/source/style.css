@@ -415,6 +415,26 @@ td[class="avatar-descr"]{
     text-align: center;
 }
 
+/* Invoice */
+[class="invoice_table"]{
+    width: 100%;
+}
+
+[class="invoice_table"] td{
+    border-bottom-width: 1px;
+    border-bottom-color: #E9E9E9;
+    border-bottom-style: solid;
+}
+
+td[class="column-1"]{
+    text-align: right;
+}
+
+td[class="column-2"]{
+    text-align: center;
+    font-weight: bold;
+}
+
 @media only screen and (min-width:540px) {
     div[class="descr-cell"]{
         margin-left: 150px;

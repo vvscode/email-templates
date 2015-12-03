@@ -35,7 +35,20 @@
   {% if collectable.date %} <p>{{collectable.date}}</p> {% endif %}
   {% if collectable.value %} <p>{{collectable.value}}</p> {% endif %}
   {% if collectable.provenance %} <p>{{collectable.provenance}}</p> {% endif %}
-  {% if collectable.exhibited %} <p>{{collectable.exhibited}}</p> {% endif %}
+  {% if collectable.exhibited_title %}
+    <p>
+      {{collectable.exhibited_title}}
+      {% if collectable.exhibited_start_date or collectable.exhibited_end_date or collectable.exhibited_location %}
+        {% if collectable.exhibited_end_date %}
+          ({% if collectable.exhibited_location %} {{collectable.exhibited_location}}, {% endif %}{{collectable.exhibited_start_date}} - {{collectable.exhibited_end_date}})
+
+        {% else %}
+          ({% if collectable.exhibited_location %} {{collectable.exhibited_location}}, {% endif %} {{collectable.exhibited_start_date}} )
+
+        {% endif %}
+      {% endif %}
+    </p>
+  {% endif %}
   {% if collectable.literature %} <p>{{collectable.literature}}</p> {% endif %}
 {% else %}
   {% if collectable.title %} <p><i>{{collectable.title}}</i></p> {% endif %}
@@ -45,7 +58,20 @@
   {% if collectable.size %} <p>{{collectable.size}}</p> {% endif %}
   {% if collectable.value %} <p>{{collectable.value}}</p> {% endif %}
   {% if collectable.provenance %} <p>{{collectable.provenance}}</p> {% endif %}
-  {% if collectable.exhibited %} <p>{{collectable.exhibited}}</p> {% endif %}
+  {% if collectable.exhibited_title %}
+    <p>
+      {{collectable.exhibited_title}}
+      {% if collectable.exhibited_start_date or collectable.exhibited_end_date or collectable.exhibited_location %}
+        {% if collectable.exhibited_end_date %}
+          ({% if collectable.exhibited_location %} {{collectable.exhibited_location}}, {% endif %}{{collectable.exhibited_start_date}} - {{collectable.exhibited_end_date}})
+
+        {% else %}
+          ({% if collectable.exhibited_location %} {{collectable.exhibited_location}}, {% endif %} {{collectable.exhibited_start_date}} )
+
+        {% endif %}
+      {% endif %}
+    </p>
+  {% endif %}
   {% if collectable.literature %} <p>{{collectable.literature}}</p> {% endif %}
 {% endif %}
                     </div>

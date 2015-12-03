@@ -182,7 +182,20 @@
     {% if collectable.date %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.date}}</p> {% endif %}
     {% if collectable.value %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.value}}</p> {% endif %}
     {% if collectable.provenance %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.provenance}}</p> {% endif %}
-    {% if collectable.exhibited %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.exhibited}}</p> {% endif %}
+    {% if collectable.exhibited_title %}
+      <p style="font-size: 14px; line-height: 1.7em; margin: 0;">
+        {{collectable.exhibited_title}}
+        {% if collectable.exhibited_start_date or collectable.exhibited_end_date or collectable.exhibited_location %}
+          {% if collectable.exhibited_end_date %}
+            ({% if collectable.exhibited_location %} {{collectable.exhibited_location}}, {% endif %}{{collectable.exhibited_start_date}} - {{collectable.exhibited_end_date}})
+  
+          {% else %}
+            ({% if collectable.exhibited_location %} {{collectable.exhibited_location}}, {% endif %} {{collectable.exhibited_start_date}} )
+  
+          {% endif %}
+        {% endif %}
+      </p>
+    {% endif %}
     {% if collectable.literature %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.literature}}</p> {% endif %}
   {% else %}
     {% if collectable.title %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;"><i>{{collectable.title}}</i></p> {% endif %}
@@ -192,7 +205,20 @@
     {% if collectable.size %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.size}}</p> {% endif %}
     {% if collectable.value %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.value}}</p> {% endif %}
     {% if collectable.provenance %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.provenance}}</p> {% endif %}
-    {% if collectable.exhibited %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.exhibited}}</p> {% endif %}
+    {% if collectable.exhibited_title %}
+      <p style="font-size: 14px; line-height: 1.7em; margin: 0;">
+        {{collectable.exhibited_title}}
+        {% if collectable.exhibited_start_date or collectable.exhibited_end_date or collectable.exhibited_location %}
+          {% if collectable.exhibited_end_date %}
+            ({% if collectable.exhibited_location %} {{collectable.exhibited_location}}, {% endif %}{{collectable.exhibited_start_date}} - {{collectable.exhibited_end_date}})
+  
+          {% else %}
+            ({% if collectable.exhibited_location %} {{collectable.exhibited_location}}, {% endif %} {{collectable.exhibited_start_date}} )
+  
+          {% endif %}
+        {% endif %}
+      </p>
+    {% endif %}
     {% if collectable.literature %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.literature}}</p> {% endif %}
   {% endif %}
                       </div>
