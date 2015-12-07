@@ -8,35 +8,47 @@
     <td class="td-content" valign="top">
       <h2 class="title">Your subscription confirmation</h2>
 
+      <table class="invoice_info" cellpadding="0" cellspacing="0" align="center" border="0">
+        <tbody>
+          <tr>
+            <td valign="top">
+              <b>{{billing_first_name}} {{billing_last_name}}</b><br>
+              {{{billing_full_address}}}
+            </td>
+            <td align="right" valign="top">
+              <b>Invoice Receipt #{{invoice_number}}</b><br>
+              {{invoice_date}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
       <!-- message-body -->
 
       {{#subscription_has_trial?}}
-      <p  style="margin-bottom: 10px;">Your credit card will be billed
+      <p  style="margin-bottom: 14px;">Your credit card will be billed
         {{{subscription_total_amount}}} (minus any pending discounts) when your trial ends at {{subscription_trial_ends_at}}.
       </p>
       {{/subscription_has_trial?}}
       {{^subscription_has_trial?}}
 
-      <p  style="margin-bottom: 10px;">Your subscription started at
+      <p style="margin-bottom: 14px;">Your subscription started at
         {{subscription_current_period_started_at}}.
         It is now active and will be
         automatically renewed on
         {{subscription_current_period_ends_at}}.</p>
 
-      <p>Your credit card was billed
-        {{{invoice_total_paid}}}.</p>
+      <p>Your credit card was billed {{{invoice_total_paid}}}.</p>
       {{/subscription_has_trial?}}
 
       {{#company_hosted_account_management_enabled?}}
-      <p>
+      <p style="margin-bottom: 22px;">
         <a href="{{invoice_guest_view_url}}">View your invoice online.</a>
       </p>
       {{/company_hosted_account_management_enabled?}}
       <!-- /message-body -->
 
-      <h3 class="sub-title">Invoice Receipt #{{invoice_number}}, {{invoice_date}}</h3>
-
-      <p style="margin-bottom: 10px;">This email confirms your recent payment of $14.45. Here are the details of your payment:</p>
+      <p style="margin-bottom: 14px;">This email confirms your recent payment of $14.45. Here are the details of your payment:</p>
 
 
       <table class="invoice_table" cellpadding="10" cellspacing="0" align="center" border="0">

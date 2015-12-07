@@ -1,0 +1,45 @@
+<!--[if !mso]>-->
+<table class="t-content" cellpadding="0" cellspacing="0" align="center" border="0">
+  <!--<![endif]--><!--[if mso]>
+  <table class="t-content" cellpadding="0" cellspacing="0" align="center" border="0" width="540">
+  <![endif]-->
+  <tbody>
+  <tr>
+    <td class="td-content" valign="top">
+      <h2 class="title">We can't seem to process your credit card</h2>
+
+      <table class="invoice_info" cellpadding="0" cellspacing="0" align="center" border="0" style="background-color: #E9E9E9; margin-bottom: 20px; padding: 20px; width: 100%;">
+        <tbody>
+        <tr>
+          <td valign="top" style="font-size: 14px; line-height: 1.42em;">
+            <b>{{billing_first_name}} {{billing_last_name}}</b><br>
+            {{{billing_full_address}}}
+          </td>
+          <td align="right" valign="top" style="font-size: 14px; line-height: 1.42em;">
+            <b>Invoice Receipt #{{invoice_number}}</b><br>
+            {{invoice_date}}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-bottom: 10px;">
+      We are having trouble processing your payment using the {{billing_cc_type}} ending in {{billing_last_four}}.
+      {{#company_hosted_account_management_enabled?}}
+      To correct your card details or pay with another card, please update <a href="{{account_hosted_maintenance_url}}">your account</a>.
+      {{/company_hosted_account_management_enabled?}}
+      </p>
+
+      <p style="margin-bottom: 10px;">
+        Until we are able to resolve this issue, your subscription is canceled due to non-payment.
+      </p>
+
+      <p style="margin-bottom: 10px;">
+        We hope this is just a mixup and look forward to resolving this with you quickly.<br>
+        If you have any questions, don't hesitate to contact us at <a href="mailto:{{company_email}}">{{company_email}}</a> regarding invoice {{invoice_number}}.
+      </p>
+
+    </td>
+  </tr>
+  </tbody>
+</table>

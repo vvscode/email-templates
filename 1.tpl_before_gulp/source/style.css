@@ -444,6 +444,14 @@ td[class="avatar-descr"]{
     padding-left: 50px;
 }
 
+[class="invoice_info"]{
+    width: 100%;
+    background-color: #E9E9E9;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+
 
 @media only screen and (min-width:540px) {
     div[class="descr-cell"]{

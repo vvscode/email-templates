@@ -145,7 +145,7 @@
   <hr size="1" color="#000000" style="margin: 0; padding: 0;">
 
 
-<!-- new_subscription -->
+<!-- recurly_subscription_canceled -->
 <!--[if !mso]>-->
 <table class="t-content" cellpadding="0" cellspacing="0" align="center" border="0" style="max-width: 600px; min-width: 540px;">
   <!--<![endif]--><!--[if mso]>
@@ -154,125 +154,61 @@
   <tbody>
   <tr>
     <td class="td-content" valign="top" style="font-size: 14px; line-height: 1.42em; padding-left: 30px; padding-right: 30px;">
-      <h2 class="title" style="color: #AD2329; font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif; font-size: 35px; font-weight: normal; letter-spacing: 0.3px; line-height: 1em; margin: 0; margin-bottom: 29px; margin-top: 32px; text-align: center;">Your subscription confirmation</h2>
+      <h2 class="title" style="color: #AD2329; font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif; font-size: 35px; font-weight: normal; letter-spacing: 0.3px; line-height: 1em; margin: 0; margin-bottom: 29px; margin-top: 32px; text-align: center;">We're sad to see you leave</h2>
 
-      <table class="invoice_info" cellpadding="0" cellspacing="0" align="center" border="0" style="background-color: #E9E9E9; margin-bottom: 20px; padding: 20px; width: 100%;">
-        <tbody>
-          <tr>
-            <td valign="top" style="font-size: 14px; line-height: 1.42em;">
-              <b>{{billing_first_name}} {{billing_last_name}}</b><br>
-              {{{billing_full_address}}}
-            </td>
-            <td align="right" valign="top" style="font-size: 14px; line-height: 1.42em;">
-              <b>Invoice Receipt #{{invoice_number}}</b><br>
-              {{invoice_date}}
-            </td>
-          </tr>
-        </tbody>
-      </table>
-
-      <!-- message-body -->
-
-      {{#subscription_has_trial?}}
-      <p style="font-size: 14px; line-height: 1.42em; margin: 0; margin-bottom: 14px;">Your credit card will be billed
-        {{{subscription_total_amount}}} (minus any pending discounts) when your trial ends at {{subscription_trial_ends_at}}.
+      <p style="font-size: 14px; line-height: 1.42em; margin: 0; margin-bottom: 10px;">
+        <b>From:</b>
       </p>
-      {{/subscription_has_trial?}}
-      {{^subscription_has_trial?}}
 
-      <p style="font-size: 14px; line-height: 1.42em; margin: 0; margin-bottom: 14px;">Your subscription started at
-        {{subscription_current_period_started_at}}.
-        It is now active and will be
-        automatically renewed on
-        {{subscription_current_period_ends_at}}.</p>
-
-      <p style="font-size: 14px; line-height: 1.42em; margin: 0;">Your credit card was billed {{{invoice_total_paid}}}.</p>
-      {{/subscription_has_trial?}}
-
-      {{#company_hosted_account_management_enabled?}}
-      <p style="font-size: 14px; line-height: 1.42em; margin: 0; margin-bottom: 22px;">
-        <a href="{{invoice_guest_view_url}}" style="color: #AD2329; text-decoration: underline;">View your invoice online.</a>
+      <p style="font-size: 14px; line-height: 1.42em; margin: 0; margin-bottom: 10px;">
+        {{billing_first_name}} {{billing_last_name}}<br>
+        {{{billing_full_address}}}
       </p>
-      {{/company_hosted_account_management_enabled?}}
-      <!-- /message-body -->
 
-      <p style="font-size: 14px; line-height: 1.42em; margin: 0; margin-bottom: 14px;">This email confirms your recent payment of $14.45. Here are the details of your payment:</p>
+      <p style="font-size: 14px; line-height: 1.42em; margin: 0; margin-bottom: 10px;">We're sorry to see you go, but we thank you for giving us a try.<br>
+        This email confirms that your subscription has been canceled.
+      </p>
 
+      <p style="font-size: 14px; line-height: 1.42em; margin: 0; margin-bottom: 10px;">
+      Your subscription will remain active until {{subscription_expires_at}}.
+      </p>
 
-      <table class="invoice_table" cellpadding="10" cellspacing="0" align="center" border="0" style="width: 100%;">
-        <tbody>
-          <tr style="background-color: #f1f1f1;">
-            <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: left;"><b>Description & Date</b></td>
-            <td class="column-2" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; font-weight: bold; line-height: 1.42em; text-align: right;">Amount</td>
-          </tr>
-          {{#invoice_line_items}}
-          <tr>
-            <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: left;" align="left">{{line_description}} ({{{line_date}}})</td>
-            <td class="column-2" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; font-weight: bold; line-height: 1.42em; text-align: right;">{{{line_amount}}}</td>
-          </tr>
-          {{/invoice_line_items}}
-          <tr>
-            <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: right;">Subtotal:</td>
-            <td class="column-2" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; font-weight: bold; line-height: 1.42em; text-align: right;">{{invoice_subtotal}}</td>
-          </tr>
-          {{#invoice_has_discount?}}
-          <tr>
-            <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: right;">Discount({{coupon_name}}):</td>
-            <td class="column-2" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; font-weight: bold; line-height: 1.42em; text-align: right;">{{{invoice_discount_amount}}}</td>
-          </tr>
-          {{/invoice_has_discount?}}
+      {{#company_hosted_account_management_full_access?}}
+      <p style="font-size: 14px; line-height: 1.42em; margin: 0; margin-bottom: 10px;">
+      If you didn't mean to cancel and wish to continue your subscription, <a href="{{account_hosted_maintenance_url}}" style="color: #AD2329; text-decoration: underline;">please reactivate your subscription</a>.
+      </p>
+      {{/company_hosted_account_management_full_access?}}
 
-          {{#invoice_has_tax?}}
-          <tr>
-            <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: right;">
-              <strong>
-                {{#invoice_has_vat?}}VAT:{{/invoice_has_vat?}}
-                {{^invoice_has_vat?}}
-                {{invoice_tax_region}} Tax {{invoice_tax_rate}}:
-                {{/invoice_has_vat?}}
-              </strong>
-            </td>
-            <td class="column-2" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; font-weight: bold; line-height: 1.42em; text-align: right;">
-              <strong>{{{invoice_tax_amount}}}</strong>
-            </td>
-          </tr>
-          {{/invoice_has_tax?}}
-
-          <tr>
-            <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: right;">Paid:</td>
-            <td class="column-2" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; font-weight: bold; line-height: 1.42em; text-align: right;">{{invoice_total_paid}}</td>
-          </tr>
-          <tr style="background-color: #E9E9E9;">
-            <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: right;"><b>Total:</b></td>
-            <td class="column-2" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; font-weight: bold; line-height: 1.42em; text-align: right;">{{{invoice_total}}}</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <br>
-
-      <table class="plan_table" cellpadding="10" cellspacing="0" align="center" border="0" style="float: left;">
+      <table class="plan_table" cellpadding="0" cellspacing="0" align="center" border="0" style="float: left; padding-bottom: 20px; padding-top: 20px; width: 100%;">
         <tbody>
         <tr>
           <td class="column-1" style="font-size: 14px; line-height: 1.42em;">
             Your plan:<br>
             <b>{{plan_name}} ({{{subscription_subtotal_amount}}})</b>
           </td>
+          {{#subscription_active?}}
           <td class="column-2" style="font-size: 14px; line-height: 1.42em; padding-left: 50px;">
-            {{#subscription_active?}}
-              Next invoice date:<br>
-              <b>{{subscription_next_payment_date}}</b>
-            {{/subscription_active?}}
+            Expires at:<br>
+            <b>{{subscription_expires_at}}</b>
           </td>
+          {{/subscription_active?}}
+          {{#company_hosted_account_management_full_access?}}
+          <td valign="top" style="font-size: 14px; line-height: 1.42em; vertical-align: top;">
+              <a href="{{account_hosted_maintenance_url}}" style="color: #AD2329; text-decoration: underline;">View past invoices</a>
+          </td>
+          {{/company_hosted_account_management_full_access?}}
         </tr>
         </tbody>
       </table>
 
+      <p style="font-size: 14px; line-height: 1.42em; margin: 0; margin-bottom: 10px;">
+        Please keep this email for your records.  If you have any questions please contact <a href="mailto:{{company_email}}" style="color: #AD2329; text-decoration: underline;">{{company_email}}</a>
+      </p>
     </td>
   </tr>
   </tbody>
 </table>
-<!-- new_subscription -->
+<!-- recurly_subscription_canceled -->
 <div style="border-top-width: 1px; border-top-color: #000000; border-top-style: solid; width: 100%; height: 1px; margin-top: 45px; line-height: 1px;">&#160;</div>
 
   <!--[if !mso]>-->

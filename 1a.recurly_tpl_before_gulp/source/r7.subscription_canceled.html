@@ -1,0 +1,62 @@
+<!--[if !mso]>-->
+<table class="t-content" cellpadding="0" cellspacing="0" align="center" border="0">
+  <!--<![endif]--><!--[if mso]>
+  <table class="t-content" cellpadding="0" cellspacing="0" align="center" border="0" width="540">
+  <![endif]-->
+  <tbody>
+  <tr>
+    <td class="td-content" valign="top">
+      <h2 class="title">We're sad to see you leave</h2>
+
+      <p style="margin-bottom: 10px;">
+        <b>From:</b>
+      </p>
+
+      <p style="margin-bottom: 10px;">
+        {{billing_first_name}} {{billing_last_name}}<br>
+        {{{billing_full_address}}}
+      </p>
+
+      <p style="margin-bottom: 10px;">We're sorry to see you go, but we thank you for giving us a try.<br>
+        This email confirms that your subscription has been canceled.
+      </p>
+
+      <p style="margin-bottom: 10px;">
+      Your subscription will remain active until {{subscription_expires_at}}.
+      </p>
+
+      {{#company_hosted_account_management_full_access?}}
+      <p style="margin-bottom: 10px;">
+      If you didn't mean to cancel and wish to continue your subscription, <a href="{{account_hosted_maintenance_url}}">please reactivate your subscription</a>.
+      </p>
+      {{/company_hosted_account_management_full_access?}}
+
+      <table class="plan_table" cellpadding="0" cellspacing="0" align="center" border="0" style="padding-top: 20px; padding-bottom: 20px; width: 100%;">
+        <tbody>
+        <tr>
+          <td class="column-1">
+            Your plan:<br>
+            <b>{{plan_name}} ({{{subscription_subtotal_amount}}})</b>
+          </td>
+          {{#subscription_active?}}
+          <td class="column-2">
+            Expires at:<br>
+            <b>{{subscription_expires_at}}</b>
+          </td>
+          {{/subscription_active?}}
+          {{#company_hosted_account_management_full_access?}}
+          <td valign="top" style="vertical-align: top;">
+              <a href="{{account_hosted_maintenance_url}}">View past invoices</a>
+          </td>
+          {{/company_hosted_account_management_full_access?}}
+        </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-bottom: 10px;">
+        Please keep this email for your records.  If you have any questions please contact <a href="mailto:{{company_email}}">{{company_email}}</a>
+      </p>
+    </td>
+  </tr>
+  </tbody>
+</table>

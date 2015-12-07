@@ -61,7 +61,7 @@ gulp.task('inline_styles_and_nunjucks', function() {
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-    gulp.watch(['./1.tpl_before_gulp/**','./data.js', './1a.recurly_tpl_before_gulp/**'], ['inline_styles','inline_styles_and_nunjucks', 'for_recurly']);
+    gulp.watch(['./1.tpl_before_gulp/**','./1a.recurly_tpl_before_gulp/**','./data.js'], ['inline_styles','for_recurly','inline_styles_and_nunjucks']);
 });
 
 // The default task (called when you run `gulp` from cli)
