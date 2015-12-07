@@ -6,7 +6,7 @@
 
       <p class="intro">Hello, you have been invited to private viewing room by <b>{{recipient_display_name}}</b>.</p>
 
-      <p style="color: #AD2329; margin-bottom: 10px;">{{collectables_count}} objects shared:</p>
+      <p style="color: #AD2329; margin-bottom: 10px;">{{collectables_count}} {% if collectables_count > 1 %} objects {% else %} object {% endif %} shared:</p>
 
 
       <table class="gallery-table" border="0" cellpadding="0" cellspacing="0">
@@ -84,7 +84,7 @@
             {% if collecrables_count - collectables_displayed_count >= 0 %}
             <table height="23" class="more-object" valign="middle">
               <tr>
-                <td><a href="{{url}}" target="_blank" style="text-decoration: initial;"><font color="#000000">+ {{items_count - items_displayed_count}} more objects</font></a></td>
+                <td><a href="{{url}}" target="_blank" style="text-decoration: initial;"><font color="#000000">+ {{items_count - items_displayed_count}} more {% if collectables_count > 1 %} objects {% else %} object {% endif %}</font></a></td>
               </tr>
             </table>
             {% endif %}

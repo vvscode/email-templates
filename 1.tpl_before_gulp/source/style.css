@@ -426,14 +426,24 @@ td[class="avatar-descr"]{
     border-bottom-style: solid;
 }
 
-td[class="column-1"]{
+[class="invoice_table"] td[class="column-1"]{
     text-align: right;
 }
 
-td[class="column-2"]{
-    text-align: center;
+[class="invoice_table"]  td[class="column-2"]{
+    text-align: right;
     font-weight: bold;
 }
+
+
+[class="plan_table"]{
+    float: left;
+}
+
+[class="plan_table"] td[class="column-2"]{
+    padding-left: 50px;
+}
+
 
 @media only screen and (min-width:540px) {
     div[class="descr-cell"]{

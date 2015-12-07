@@ -22,6 +22,22 @@ gulp.task('inline_styles', function() {
         .pipe(gulp.dest('2.tpl_complite/'));
 });
 
+gulp.task('for_recurly', function() {
+    return gulp.src('./1a.recurly_tpl_before_gulp/*.html')
+        .pipe(include())
+        .on('error', console.log)
+        .pipe(inlineCss({
+            applyStyleTags: launched,
+            applyLinkTags: launched,
+            removeStyleTags: launched,
+            removeLinkTags: launched,
+            preserveMediaQueries: launched
+        }))
+        .on('error', console.log)
+        .pipe(gulp.dest('2.tpl_complite/recurly/'));
+});
+
+
 gulp.task('inline_styles_and_nunjucks', function() {
     delete require.cache[require.resolve('./data.js')];
     var data = require('./data.js');
@@ -45,8 +61,8 @@ gulp.task('inline_styles_and_nunjucks', function() {
 
 // Rerun the task when a file changes
 gulp.task('watch', function() {
-    gulp.watch(['./1.tpl_before_gulp/**','./data.js'], ['inline_styles','inline_styles_and_nunjucks']);
+    gulp.watch(['./1.tpl_before_gulp/**','./data.js', './1a.recurly_tpl_before_gulp/**'], ['inline_styles','inline_styles_and_nunjucks', 'for_recurly']);
 });
 
 // The default task (called when you run `gulp` from cli)
-gulp.task('default', ['watch', 'inline_styles', 'inline_styles_and_nunjucks']);
+gulp.task('default', ['watch', 'inline_styles', 'inline_styles_and_nunjucks', 'for_recurly']);
