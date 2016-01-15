@@ -44,7 +44,14 @@ var DATA_ORIGINAL = {
     "file_name": "transportation-quote-answer.pdf",
     "file_url": "http://file_url",
     "comment_message": "Thank you! Please call my manager to arrange the transportation 1-555-12345",
-    "record_created_date": "09/25/2015 5:40PM"
+    "record_created_date": "09/25/2015 5:40PM",
+
+    /* for callback request */
+    "first_name": "John",
+    "last_name": "Black",
+    "email": "jsm@gmail.com",
+    "phone": "+44 78533921",
+    "comment": "I have 10 items across 3 locations which i need delivered by mid December.",
 };
 
 var img_min = "https://placeholdit.imgix.net/~text?txtsize=14&txt=90%C3%9760&w=90&h=60";
@@ -87,7 +94,14 @@ var DATA_TEST_MIN = {
     "collectables_displayed_count": 3,
     "file_url": "http://file_url",
     "comment_message": "Mesage",
-    "record_created_date": "09/25/2015 5:40PM"
+    "record_created_date": "09/25/2015 5:40PM",
+
+    /* for callback request */
+    "first_name": "John",
+    "last_name": "Black",
+    "email": "jsm@gmail.com",
+    "phone": "+44 78533921",
+    "comment": "I have 10 items across 3 locations which i need delivered by mid December."
 };
 
 var DATA_TEST_MAX = {
@@ -133,8 +147,15 @@ var DATA_TEST_MAX = {
     "file_name": long_text,
     "file_url": "http://file_url",
     "comment_message": very_long_text,
-    "record_created_date": "09/25/2015 5:40PM"
+    "record_created_date": "09/25/2015 5:40PM",
     /*"the_one_who_invited_display_name": "Эллен Джорджиане Сер-Леккен",*/
+
+    /* for callback request */
+    "first_name": "Эллен Джорджиане",
+    "last_name": "Сер-Леккен",
+    "email": "jsm@gmail.com",
+    "phone": "+44 78533921",
+    "comment": very_long_text
 };
 
 

@@ -1,0 +1,20 @@
+-----------------
+Call back request
+-----------------
+
+Name:         {{first_name}} {{last_name}}
+Email:        {{email}}
+Telephone:    {{phone}}
+Requirements: {{comment}}
+
+​
+
+© 2015 Collectrium, Inc. A Christie's Company. All rights
+reserved.
+
+6 West 48th Street, Floor 6 New York, NY 10036, USA
+
+If you feel you have received this email in error,
+please contact
+support@collectrium.com
+( mailto:support@collectrium.com )

@@ -451,6 +451,28 @@ td[class="avatar-descr"]{
     margin-bottom: 20px;
 }
 
+/* Call back request */
+[class="call_back_request_table"]{
+    width: 100%;
+    border-top-width: 1px;
+    border-top-color: #E9E9E9;
+    border-top-style: solid;
+}
+
+[class="call_back_request_table"] td{
+    border-bottom-width: 1px;
+    border-bottom-color: #E9E9E9;
+    border-bottom-style: solid;
+}
+
+[class="call_back_request_table"] td[class="column-1"]{
+    padding-left: 20px;
+}
+
+[class="call_back_request_table"]  td[class="column-2"]{
+    padding-left: 29px;
+    font-weight: bold;
+}
 
 
 @media only screen and (min-width:540px) {
