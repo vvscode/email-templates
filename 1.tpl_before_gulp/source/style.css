@@ -15,6 +15,9 @@ td, p, span {
 p {
     margin : 0;
 }
+hr {
+    color: #000000;
+}
 table[class="t-header"] {
     width: 100%;
     min-width: 320px;
@@ -94,7 +97,6 @@ a[class="button"] {
     font-size : 13px;
     text-align : center;
     text-decoration : none;
-    font-weight: bold;
 
     border-color: #AD2329;
     border-style: solid;
@@ -316,6 +318,50 @@ h3[class="sub-title2"] {
 
 /* Onboarding help */
 
+/* small cards table (Gavel) */
+table[class="small-cards-table"] {
+    display: inline-block;
+    width: 240px;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    vertical-align: top;
+    float: left;
+}
+table[class="lot-small-card-item"] {
+    width: 100%;
+    height: 80px;
+    box-sizing: border-box;
+}
+td[class="image-cell-small-card"]{
+    width: 80px;
+    padding-right: 15px;
+    vertical-align: top;
+}
+td[class="image-cell-small-card"] a{
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #e9e9e9;
+}
+td[class="image-cell-small-card"] a img{
+    display: block;
+    max-width: 80px;
+    max-height: 80px;
+    margin: 0 auto;
+}
+td[class="descr-cell-small-card"]{
+    vertical-align: top;
+}
+td[class="descr-cell-small-card"] p{
+    width: 140px;
+    font-size: 13px;
+    line-height: 1.3;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
 /* invitation-viewing-room.html */
 table[class="gallery-table"]{
     width: 100%;
@@ -474,6 +520,18 @@ td[class="avatar-descr"]{
     font-weight: bold;
 }
 
+@media only screen and (max-width:600px) {
+    table[class="small-cards-table"] {
+        width: 100% !important;
+        height: auto !important;
+        margin-right: 0 !important;
+    }
+    td[class="descr-cell-small-card"] p{
+        width: auto !important;
+        white-space: normal !important;
+
+    }
+}
 
 @media only screen and (min-width:540px) {
     div[class="descr-cell"]{
@@ -482,6 +540,10 @@ td[class="avatar-descr"]{
 }
 
 @media only screen and (max-width:540px) {
+    a[class="button"] {
+        border-right-width: 20px !important;
+        border-left-width: 20px !important;
+    }
     table[class="t-content"], table[class="t-footer"] {
         max-width : 540px !important;
         min-width : 320px !important;
@@ -617,4 +679,3 @@ td[class="avatar-descr"]{
 #airmail-line {
     margin: 0 -10px !important;
 }
-

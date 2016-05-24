@@ -3,7 +3,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Invitation to private viewing room</title>
+  <title>Saved Search Updates</title>
   <style type="text/css">
 @media only screen and (max-width:600px) {
   table[class="small-cards-table"] {
@@ -147,105 +147,65 @@
 </head>
 <body style="margin: 0;">
 <div class="mail-wrapper" style="color: #323232; font-family: Arial, Helvetica Neue, Helvetica, sans-serif; margin: 0; text-align: left;">
-
-    <table class="t-header" cellpadding="0" cellspacing="0" align="center" border="0" style="margin: auto; min-width: 320px; padding-bottom: 29px; padding-top: 29px; text-align: center; width: 100%;">
-      <tbody>
-      <tr>
-        <td class="align_center" valign="top" style="font-size: 14px; line-height: 1.42em; text-align: center;">
-          <a href="http://collectrium.com/" target="_blank" style="color: #AD2329; text-decoration: underline;">
-            <img class="head_img" src="http://go.collectrium.com/l/71842/2016-05-17/3j3zlm/71842/97576/Collectrium_2x.png" width="192" height="52" border="0" alt="Collectrium" style="">
-          </a>
-        </td>
-      </tr>
-      </tbody>
-    </table>
-    <hr size="1" color="#000000" style="color: #000000; margin: 0; padding: 0;">
+  ​
+  <table class="t-header" cellpadding="0" cellspacing="0" align="center" border="0" style="margin: auto; min-width: 320px; padding-bottom: 29px; padding-top: 29px; text-align: center; width: 100%;">
+    <tbody>
+    <tr>
+      <td class="align_center" valign="top" style="font-size: 14px; line-height: 1.42em; text-align: center;">
+        <a href="http://collectrium.com/" target="_blank" style="color: #AD2329; text-decoration: underline;">
+          <img class="head_img" src="http://go.collectrium.com/Collectrium_Official_Logo@2x.png" width="192" height="52" border="0" alt="Collectrium" style="">
+        </a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <hr size="1" style="color: #000000; margin: 0; padding: 0;">
   
-
-  <!-- invitation-viewing-room -->
+  ​
+  <!-- gavel_search_alert -->
   <table class="t-content" cellpadding="0" cellspacing="0" align="center" border="0" style="max-width: 600px; min-width: 540px;">
     <tbody>
     <tr>
       <td class="td-content" valign="top" style="font-size: 14px; line-height: 1.42em; padding-left: 30px; padding-right: 30px;">
-        <h2 class="title" style="color: #AD2329; font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif; font-size: 35px; font-weight: normal; letter-spacing: 0.3px; line-height: 1em; margin: 0; margin-bottom: 29px; margin-top: 32px; text-align: center;">Invitation to private viewing room</h2>
-  
-        <p class="intro" style="font-size: 14px; line-height: 1.42em; margin: 0; margin-bottom: 27px; margin-top: 15px;">Hello, you have been invited to private viewing room by <b>{{recipient_display_name}}</b>.</p>
-  
-        <p style="color: #AD2329; font-size: 14px; line-height: 1.42em; margin: 0; margin-bottom: 10px;">{{collectables_count}} {% if collectables_count > 1 %} objects {% else %} object {% endif %} shared:</p>
-  
-  
+        <h2 class="title" style="color: #AD2329; font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif; font-size: 35px; font-weight: normal; letter-spacing: 0.3px; line-height: 1em; margin: 0; margin-bottom: 29px; margin-top: 32px; text-align: left;">Saved Search Updates&nbsp;&ndash;&nbsp;{{test}}</h2>
+        ​
+        <h3 class="sub-title" style="color: #AD2329; font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif; font-size: 24px; font-weight: normal; letter-spacing: 0.3px; line-height: 1em; margin: 0; margin-bottom: 29px; margin-top: 32px;">{{test}}</h3>
+        ​
+        ​
         <table class="gallery-table" border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
           <tr>
             <td style="font-size: 14px; line-height: 1.42em;">
-  
+              ​
               {% for collectable in collectables %}
-                <!--[if !mso]>-->
-                <table class="gallery-item" border="0" cellspacing="0" cellpadding="0" style="padding-bottom: 10px; width: 100%;">
-                  <!--<![endif]--><!--[if mso]>
-                  <table class="gallery-item" border="0" cellspacing="0" cellpadding="5" style="padding-bottom: 35px;">
-                  <![endif]-->
-                  <tr>
-                    <td style="font-size: 14px; line-height: 1.42em;">
-                      <div class="image-cell" style="float: left; padding-right: 30px; width: 120px;">
-                        <a href="{{url}}" target="_blank" style="color: #AD2329; text-decoration: underline;">
-                          <img src="{{collectable.img}}" style="display: block; margin: auto; max-height: 125px; max-width: 120px; padding-bottom: 25px;">
-                        </a>
-                      </div>
-                      <div class="descr-cell" style="">
-  {% if collectable.artist_name %}<p style="font-size: 14px; line-height: 1.7em; margin: 0;"><b>{{collectable.artist_name}}</b></p>
-    {% if collectable.title %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;"><i>{{collectable.title}}</i></p> {% endif %}
-    {% if collectable.description %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.description}}</p> {% endif %}
-    {% if collectable.medium %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.medium}}</p> {% endif %}
-    {% if collectable.size %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.size}}</p> {% endif %}
-    {% if collectable.date %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.date}}</p> {% endif %}
-    {% if collectable.value %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.value}}</p> {% endif %}
-    {% if collectable.provenance %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.provenance}}</p> {% endif %}
-    {% if collectable.exhibited_title %}
-      <p style="font-size: 14px; line-height: 1.7em; margin: 0;">
-        {{collectable.exhibited_title}}
-        {% if collectable.exhibited_start_date or collectable.exhibited_end_date or collectable.exhibited_location %}
-          {% if collectable.exhibited_end_date %}
-            ({% if collectable.exhibited_location %} {{collectable.exhibited_location}}, {% endif %}{{collectable.exhibited_start_date}} - {{collectable.exhibited_end_date}})
-  
-          {% else %}
-            ({% if collectable.exhibited_location %} {{collectable.exhibited_location}}, {% endif %} {{collectable.exhibited_start_date}} )
-  
-          {% endif %}
-        {% endif %}
-      </p>
-    {% endif %}
-    {% if collectable.literature %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.literature}}</p> {% endif %}
-  {% else %}
-    {% if collectable.title %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;"><i>{{collectable.title}}</i></p> {% endif %}
-    {% if collectable.date %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.date}}</p> {% endif %}
-    {% if collectable.description %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.description}}</p> {% endif %}
-    {% if collectable.medium %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.medium}}</p> {% endif %}
-    {% if collectable.size %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.size}}</p> {% endif %}
-    {% if collectable.value %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.value}}</p> {% endif %}
-    {% if collectable.provenance %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.provenance}}</p> {% endif %}
-    {% if collectable.exhibited_title %}
-      <p style="font-size: 14px; line-height: 1.7em; margin: 0;">
-        {{collectable.exhibited_title}}
-        {% if collectable.exhibited_start_date or collectable.exhibited_end_date or collectable.exhibited_location %}
-          {% if collectable.exhibited_end_date %}
-            ({% if collectable.exhibited_location %} {{collectable.exhibited_location}}, {% endif %}{{collectable.exhibited_start_date}} - {{collectable.exhibited_end_date}})
-  
-          {% else %}
-            ({% if collectable.exhibited_location %} {{collectable.exhibited_location}}, {% endif %} {{collectable.exhibited_start_date}} )
-  
-          {% endif %}
-        {% endif %}
-      </p>
-    {% endif %}
-    {% if collectable.literature %} <p style="font-size: 14px; line-height: 1.7em; margin: 0;">{{collectable.literature}}</p> {% endif %}
-  {% endif %}
-                      </div>
-                    </td>
-                  </tr>
-                </table>
+              <!--[if !mso]>-->
+              <table class="small-cards-table" border="0" cellspacing="0" cellpadding="0" style="display: inline-block; float: left; margin-bottom: 30px; margin-right: 20px; vertical-align: top; width: 240px;">
+                <!--<![endif]--><!--[if mso]>
+                <table class="gallery-item" border="0" cellspacing="0" cellpadding="5" style="padding-bottom: 35px;">
+                <![endif]-->
+                <tr>
+                  <td style="font-size: 14px; line-height: 1.42em;">
+                    <table class="lot-small-card-item" border="0" cellspacing="0" cellpadding="0" style="box-sizing: border-box; height: 80px; width: 100%;">
+                      <tr>
+                        <td class="image-cell-small-card" style="font-size: 14px; line-height: 1.42em; padding-right: 15px; vertical-align: top; width: 80px;">
+                          <a href="{{url}}" target="_blank" style="border-color: #e9e9e9; border-style: solid; border-width: 1px; color: #AD2329; display: block; height: 80px; text-decoration: underline; width: 80px;">
+                            <img src="{{collectable.img}}" alt="image" style="display: block; margin: 0 auto; max-height: 80px; max-width: 80px;">
+                          </a>
+                        </td>
+                        <td class="descr-cell-small-card" style="font-size: 14px; line-height: 1.42em; vertical-align: top;">
+                          <p style="font-size: 13px; line-height: 1.3; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 140px;"><b style="text-transform: uppercase;">{{collectable.artist_name}}</b></p>
+                          <p style="font-size: 13px; line-height: 1.3; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 140px;"><i>{{collectable.title}}</i></p>
+                          <p style="font-size: 13px; line-height: 1.3; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 140px;">{{collectable.medium}}</p>
+                          <p style="font-size: 13px; line-height: 1.3; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 140px;">{{collectable.size}}</p>
+                          <p style="font-size: 13px; line-height: 1.3; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 140px;"><b>{{collectable.estimate}}</b></p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
               {% endfor %}
-  
-  
+              ​
+              ​
               {% if collecrables_count - collectables_displayed_count >= 0 %}
               <table height="23" class="more-object" valign="middle" style="background-color: #F1F1F1; line-height: 23px; text-align: center; width: 100%;">
                 <tr>
@@ -253,24 +213,79 @@
                 </tr>
               </table>
               {% endif %}
-  
+              ​
             </td>
           </tr>
         </table>
-  
+        ​
         <div class="align_center" style="text-align: center;">
           <div class="btn-wrap" style="margin-top: 35px;">
-            <a href="{{url}}" class="button" target="_blank" style="background-color: #AD2329; border-bottom-width: 10px; border-color: #AD2329; border-left-width: 35px; border-right-width: 35px; border-style: solid; border-top-width: 10px; color: #ffffff; display: inline-block; font-size: 13px; text-align: center; text-decoration: none;">GO TO PRIVATE VIEWING ROOM</a>
+            <a href="{{url}}" class="button" target="_blank" style="background-color: #AD2329; border-bottom-width: 10px; border-color: #AD2329; border-left-width: 35px; border-right-width: 35px; border-style: solid; border-top-width: 10px; color: #ffffff; display: inline-block; font-size: 13px; text-align: center; text-decoration: none;">SEE ALL {{test_number}} NEW OR UPDATED LOTS</a>
           </div>
         </div>
-  
+        ​
+        <!---->
+        <h3 class="sub-title" style="color: #AD2329; font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif; font-size: 24px; font-weight: normal; letter-spacing: 0.3px; line-height: 1em; margin: 0; margin-bottom: 29px; margin-top: 32px;">{{test}}</h3>
+        ​
+        <table class="gallery-table" border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+          <tr>
+            <td style="font-size: 14px; line-height: 1.42em;">
+              ​
+              {% for collectable in collectables %}
+              <!--[if !mso]>-->
+              <table class="small-cards-table" border="0" cellspacing="0" cellpadding="0" style="display: inline-block; float: left; margin-bottom: 30px; margin-right: 20px; vertical-align: top; width: 240px;">
+                <!--<![endif]--><!--[if mso]>
+                <table class="gallery-item" border="0" cellspacing="0" cellpadding="5" style="padding-bottom: 35px;">
+                <![endif]-->
+                <tr>
+                  <td style="font-size: 14px; line-height: 1.42em;">
+                    <table class="lot-small-card-item" border="0" cellspacing="0" cellpadding="0" style="box-sizing: border-box; height: 80px; width: 100%;">
+                      <tr>
+                        <td class="image-cell-small-card" style="font-size: 14px; line-height: 1.42em; padding-right: 15px; vertical-align: top; width: 80px;">
+                          <a href="{{url}}" target="_blank" style="border-color: #e9e9e9; border-style: solid; border-width: 1px; color: #AD2329; display: block; height: 80px; text-decoration: underline; width: 80px;">
+                            <img src="{{collectable.img}}" alt="image" style="display: block; margin: 0 auto; max-height: 80px; max-width: 80px;">
+                          </a>
+                        </td>
+                        <td class="descr-cell-small-card" style="font-size: 14px; line-height: 1.42em; vertical-align: top;">
+                          <p style="font-size: 13px; line-height: 1.3; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 140px;"><b style="text-transform: uppercase;">{{collectable.artist_name}}</b></p>
+                          <p style="font-size: 13px; line-height: 1.3; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 140px;"><i>{{collectable.title}}</i></p>
+                          <p style="font-size: 13px; line-height: 1.3; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 140px;">{{collectable.medium}}</p>
+                          <p style="font-size: 13px; line-height: 1.3; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 140px;">{{collectable.size}}</p>
+                          <p style="font-size: 13px; line-height: 1.3; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; width: 140px;"><b>{{collectable.estimate}}</b></p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              {% endfor %}
+              ​
+              ​
+              {% if collecrables_count - collectables_displayed_count >= 0 %}
+              <table height="23" class="more-object" valign="middle" style="background-color: #F1F1F1; line-height: 23px; text-align: center; width: 100%;">
+                <tr>
+                  <td style="font-size: 14px; line-height: 1.42em;"><a href="{{url}}" target="_blank" style="color: #AD2329; text-decoration: initial;"><font color="#000000">+ {{items_count - items_displayed_count}} more {% if collectables_count > 1 %} objects {% else %} object {% endif %}</font></a></td>
+                </tr>
+              </table>
+              {% endif %}
+              ​
+            </td>
+          </tr>
+        </table>
+        ​
+        <div class="align_center" style="text-align: center;">
+          <div class="btn-wrap" style="margin-top: 35px;">
+            <a href="{{url}}" class="button" target="_blank" style="background-color: #AD2329; border-bottom-width: 10px; border-color: #AD2329; border-left-width: 35px; border-right-width: 35px; border-style: solid; border-top-width: 10px; color: #ffffff; display: inline-block; font-size: 13px; text-align: center; text-decoration: none;">SEE ALL {{test_number}} NEW OR UPDATED LOTS</a>
+          </div>
+        </div>
+        ​
       </td>
     </tr>
     </tbody>
   </table>
   
-  <!-- invitation-viewing-room -->
-
+  <!-- gavel_search_alert -->
+  ​
   <div style="border-top-width: 1px; border-top-color: #000000; border-top-style: solid; width: 100%; height: 1px; margin-top: 45px; line-height: 1px;">&#160;</div>
   
     <!--[if !mso]>-->
@@ -334,7 +349,7 @@
     </tbody>
   </table>
   
-
+  ​
 </div>
-
+​
 </body></html>

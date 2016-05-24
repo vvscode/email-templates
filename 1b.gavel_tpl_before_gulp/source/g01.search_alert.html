@@ -1,0 +1,120 @@
+<table class="t-content" cellpadding="0" cellspacing="0" align="center" border="0">
+  <tbody>
+  <tr>
+    <td class="td-content" valign="top" style="font-size: 14px;padding-left: 30px;padding-right: 30px;">
+      <h2 class="title" style="text-align: left;">Saved Search Updates&nbsp;&ndash;&nbsp;{{test}}</h2>
+      ​
+      <h3 class="sub-title">{{test}}</h3>
+      ​
+      ​
+      <table class="gallery-table" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td>
+            ​
+            {% for collectable in collectables %}
+            <!--[if !mso]>-->
+            <table class="small-cards-table" border="0" cellspacing="0" cellpadding="0">
+              <!--<![endif]--><!--[if mso]>
+              <table class="gallery-item" border="0" cellspacing="0" cellpadding="5" style="padding-bottom: 35px;">
+              <![endif]-->
+              <tr>
+                <td>
+                  <table class="lot-small-card-item" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td class="image-cell-small-card">
+                        <a href="{{url}}" target="_blank">
+                          <img src="{{collectable.img}}" alt="image" />
+                        </a>
+                      </td>
+                      <td class="descr-cell-small-card">
+                        <p><b style="text-transform: uppercase;">{{collectable.artist_name}}</b></p>
+                        <p><i>{{collectable.title}}</i></p>
+                        <p>{{collectable.medium}}</p>
+                        <p>{{collectable.size}}</p>
+                        <p><b>{{collectable.estimate}}</b></p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            {% endfor %}
+            ​
+            ​
+            {% if collecrables_count - collectables_displayed_count >= 0 %}
+            <table height="23" class="more-object" valign="middle">
+              <tr>
+                <td><a href="{{url}}" target="_blank" style="text-decoration: initial;"><font color="#000000">+ {{items_count - items_displayed_count}} more {% if collectables_count > 1 %} objects {% else %} object {% endif %}</font></a></td>
+              </tr>
+            </table>
+            {% endif %}
+            ​
+          </td>
+        </tr>
+      </table>
+      ​
+      <div class="align_center">
+        <div class="btn-wrap">
+          <a href="{{url}}" class="button" target="_blank">SEE ALL {{test_number}} NEW OR UPDATED LOTS</a>
+        </div>
+      </div>
+      ​
+      <!---->
+      <h3 class="sub-title">{{test}}</h3>
+      ​
+      <table class="gallery-table" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td>
+            ​
+            {% for collectable in collectables %}
+            <!--[if !mso]>-->
+            <table class="small-cards-table" border="0" cellspacing="0" cellpadding="0">
+              <!--<![endif]--><!--[if mso]>
+              <table class="gallery-item" border="0" cellspacing="0" cellpadding="5" style="padding-bottom: 35px;">
+              <![endif]-->
+              <tr>
+                <td>
+                  <table class="lot-small-card-item" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td class="image-cell-small-card">
+                        <a href="{{url}}" target="_blank">
+                          <img src="{{collectable.img}}" alt="image" />
+                        </a>
+                      </td>
+                      <td class="descr-cell-small-card">
+                        <p><b style="text-transform: uppercase;">{{collectable.artist_name}}</b></p>
+                        <p><i>{{collectable.title}}</i></p>
+                        <p>{{collectable.medium}}</p>
+                        <p>{{collectable.size}}</p>
+                        <p><b>{{collectable.estimate}}</b></p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            {% endfor %}
+            ​
+            ​
+            {% if collecrables_count - collectables_displayed_count >= 0 %}
+            <table height="23" class="more-object" valign="middle">
+              <tr>
+                <td><a href="{{url}}" target="_blank" style="text-decoration: initial;"><font color="#000000">+ {{items_count - items_displayed_count}} more {% if collectables_count > 1 %} objects {% else %} object {% endif %}</font></a></td>
+              </tr>
+            </table>
+            {% endif %}
+            ​
+          </td>
+        </tr>
+      </table>
+      ​
+      <div class="align_center">
+        <div class="btn-wrap">
+          <a href="{{url}}" class="button" target="_blank">SEE ALL {{test_number}} NEW OR UPDATED LOTS</a>
+        </div>
+      </div>
+      ​
+    </td>
+  </tr>
+  </tbody>
+</table>

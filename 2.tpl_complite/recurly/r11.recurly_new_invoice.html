@@ -5,6 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Invoice #1064, Sep 15, 2015</title>
   <style type="text/css">
+@media only screen and (max-width:600px) {
+  table[class="small-cards-table"] {
+    width: 100% !important;
+    height: auto !important;
+    margin-right: 0 !important;
+  }
+  td[class="descr-cell-small-card"] p {
+    width: auto !important;
+    white-space: normal !important;
+  }
+}
+
+
 @media only screen and (min-width:540px) {
   div[class="descr-cell"] {
     margin-left: 150px;
@@ -13,6 +26,10 @@
 
 
 @media only screen and (max-width:540px) {
+  a[class="button"] {
+    border-right-width: 20px !important;
+    border-left-width: 20px !important;
+  }
   table[class="t-content"], table[class="t-footer"] {
     max-width: 540px !important;
     min-width: 320px !important;
@@ -142,7 +159,7 @@
     </tr>
     </tbody>
   </table>
-  <hr size="1" color="#000000" style="margin: 0; padding: 0;">
+  <hr size="1" color="#000000" style="color: #000000; margin: 0; padding: 0;">
 
 
 <!-- recurly_new_invoice -->
