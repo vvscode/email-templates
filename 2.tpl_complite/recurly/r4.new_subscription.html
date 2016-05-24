@@ -136,7 +136,7 @@
     <tr>
       <td class="align_center" valign="top" style="font-size: 14px; line-height: 1.42em; text-align: center;">
         <a href="http://collectrium.com/" target="_blank" style="color: #AD2329; text-decoration: underline;">
-          <img class="head_img" src="http://go.collectrium.com/Collectrium_Official_Logo@2x.png" width="192" height="52" border="0" alt="Collectrium - A CHRISTIE'S Company" style="">
+          <img class="head_img" src="http://go.collectrium.com/l/71842/2016-05-17/3j3zlm/71842/97576/Collectrium_2x.png" width="192" height="52" border="0" alt="Collectrium" style="">
         </a>
       </td>
     </tr>
@@ -196,9 +196,6 @@
       {{/company_hosted_account_management_enabled?}}
       <!-- /message-body -->
 
-      <p style="font-size: 14px; line-height: 1.42em; margin: 0; margin-bottom: 14px;">This email confirms your recent payment of $14.45. Here are the details of your payment:</p>
-
-
       <table class="invoice_table" cellpadding="10" cellspacing="0" align="center" border="0" style="width: 100%;">
         <tbody>
           <tr style="background-color: #f1f1f1;">
@@ -207,7 +204,11 @@
           </tr>
           {{#invoice_line_items}}
           <tr>
-            <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: left;" align="left">{{line_description}} ({{{line_date}}})</td>
+            <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: left;" align="left">
+              {{line_description}}
+              {{#line_date}}({{{line_date}}}){{/line_date}}
+              {{^line_quantity_is_one?}}x {{line_quantity}}{{/line_quantity_is_one?}}
+            </td>
             <td class="column-2" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; font-weight: bold; line-height: 1.42em; text-align: right;">{{{line_amount}}}</td>
           </tr>
           {{/invoice_line_items}}
@@ -217,7 +218,7 @@
           </tr>
           {{#invoice_has_discount?}}
           <tr>
-            <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: right;">Discount({{coupon_name}}):</td>
+            <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: right;">Discount{{#invoice_discounts}}({{coupon_name}}){{/invoice_discounts}}:</td>
             <td class="column-2" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; font-weight: bold; line-height: 1.42em; text-align: right;">{{{invoice_discount_amount}}}</td>
           </tr>
           {{/invoice_has_discount?}}
@@ -239,12 +240,16 @@
           {{/invoice_has_tax?}}
 
           <tr>
+            <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: right;">Total:</td>
+            <td class="column-2" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; font-weight: bold; line-height: 1.42em; text-align: right;">{{{invoice_total}}}</td>
+          </tr>
+          <tr>
             <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: right;">Paid:</td>
             <td class="column-2" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; font-weight: bold; line-height: 1.42em; text-align: right;">{{invoice_total_paid}}</td>
           </tr>
           <tr style="background-color: #E9E9E9;">
-            <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: right;"><b>Total:</b></td>
-            <td class="column-2" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; font-weight: bold; line-height: 1.42em; text-align: right;">{{{invoice_total}}}</td>
+            <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: right;"><b>Total due:</b></td>
+            <td class="column-2" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; font-weight: bold; line-height: 1.42em; text-align: right;">{{{invoice_total_due}}}</td>
           </tr>
         </tbody>
       </table>
@@ -273,6 +278,7 @@
   </tbody>
 </table>
 <!-- new_subscription -->
+
 <div style="border-top-width: 1px; border-top-color: #000000; border-top-style: solid; width: 100%; height: 1px; margin-top: 45px; line-height: 1px;">&#160;</div>
 
   <!--[if !mso]>-->
@@ -284,6 +290,7 @@
   <tbody>
   <tr>
     <td class="align-center" style="font-size: 13px; line-height: 1.42em; text-align: center;">
+      <p style="font-size: 13px; line-height: 1.42em; margin: 0; text-align: center;">+1 212 796 5887 (Americas) | +44 20 3608 1312 (Europe) | +852 3018 4929 (Asia)</p>
       <p style="font-size: 13px; line-height: 1.42em; margin: 0; text-align: center;">© 2015 Collectrium, Inc. A Christie's Company. All rights reserved.</p>
       <p style="font-size: 13px; line-height: 1.42em; margin: 0; text-align: center;">6 West 48th Street, Floor 6 New York, NY 10036, USA</p>
       <div style="margin-top: 24px; margin-bottom: 24px;">

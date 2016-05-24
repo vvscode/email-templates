@@ -8,15 +8,41 @@
     <td class="td-content" valign="top">
       <h2 class="title">Invoice #{{invoice_number}}, {{invoice_date}}</h2>
 
-      <p style="margin-bottom: 10px;"><b>From</b></p>
+      <table class="invoice_info" cellpadding="0" cellspacing="0" align="center" border="0">
+        <tbody>
+        <tr>
+          <td>
+            <b>{{billing_first_name}} {{billing_last_name}}</b><br>
+            {{{billing_full_address}}}
+          </td>
+          <td>
+            Billed on: {{invoice_date}}<br>
+            Due on: {{invoice_due_at}}<br>
+            {{#invoice_po_number}}
+            PO Number: {{invoice_po_number}}<br>
+            {{/invoice_po_number}}
+            {{#invoice_net_terms}}
+            Terms: Net-{{invoice_net_terms}}<br>
+            {{/invoice_net_terms}}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      You have a new invoice from {{company_name}}, due on {{invoice_due_at}}.<br>
 
-      {{billing_first_name}} {{billing_last_name}}<br>
-      {{billing_full_address}}<br>
-
-
-      <p style="margin-bottom: 10px; text-align: center;"><b>Invoice Receipt</b></p>
-      This email confirms your recent payment of {{invoice_total_paid}}. Here are the details of your payment:<br>
-      <br>
+      {{#company_hosted_account_management_enabled?}}
+        {{#company_hosted_account_management_allow_pay_invoice?}}
+          <a href="{{invoice_guest_view_url}}" target="_blank">
+            <font color="#AD2329">Pay your invoice online</font>
+          </a>
+        {{/company_hosted_account_management_allow_pay_invoice?}}
+        {{^company_hosted_account_management_allow_pay_invoice?}}
+          <a href="{{invoice_guest_view_url}}" target="_blank">
+            <font color="#AD2329">View your invoice online</font>
+          </a>
+        {{/company_hosted_account_management_allow_pay_invoice?}}
+      {{/company_hosted_account_management_enabled?}}
+      <br><br>
 
       <table class="invoice_table" cellpadding="10" cellspacing="0" align="center" border="0">
         <tbody>
@@ -26,7 +52,11 @@
           </tr>
           {{#invoice_line_items}}
           <tr>
-            <td class="column-1" style="text-align: left" align="left">{{line_description}} ({{{line_date}}})</td>
+            <td class="column-1" style="text-align: left" align="left">
+              {{line_description}}
+              {{#line_date}}({{{line_date}}}){{/line_date}}
+              {{^line_quantity_is_one?}}x {{line_quantity}}{{/line_quantity_is_one?}}
+            </td>
             <td class="column-2">{{{line_amount}}}</td>
           </tr>
           {{/invoice_line_items}}
@@ -36,7 +66,7 @@
           </tr>
           {{#invoice_has_discount?}}
           <tr>
-            <td class="column-1">Discount({{coupon_name}}):</td>
+            <td class="column-1">Discount{{#invoice_discounts}}({{coupon_name}}){{/invoice_discounts}}:</td>
             <td class="column-2">{{{invoice_discount_amount}}}</td>
           </tr>
           {{/invoice_has_discount?}}
@@ -58,12 +88,16 @@
           {{/invoice_has_tax?}}
 
           <tr>
+            <td class="column-1">Total:</td>
+            <td class="column-2">{{{invoice_total}}}</td>
+          </tr>
+          <tr>
             <td class="column-1">Paid:</td>
             <td class="column-2">{{invoice_total_paid}}</td>
           </tr>
           <tr style="background-color: #E9E9E9;">
-            <td class="column-1"><b>Total:</b></td>
-            <td class="column-2">{{{invoice_total}}}</td>
+            <td class="column-1"><b>Total due:</b></td>
+            <td class="column-2">{{{invoice_total_due}}}</td>
           </tr>
         </tbody>
       </table>

@@ -1,0 +1,125 @@
+<!--[if !mso]>-->
+<table class="t-content" cellpadding="0" cellspacing="0" align="center" border="0">
+  <!--<![endif]--><!--[if mso]>
+  <table class="t-content" cellpadding="0" cellspacing="0" align="center" border="0" width="540">
+  <![endif]-->
+  <tbody>
+  <tr>
+    <td class="td-content" valign="top">
+      <h2 class="title">Your invoice is past due</h2>
+
+      <table class="invoice_info" cellpadding="0" cellspacing="0" align="center" border="0">
+        <tbody>
+        <tr>
+          <td>
+            <b>{{billing_first_name}} {{billing_last_name}}</b><br>
+            {{{billing_full_address}}}
+          </td>
+          <td>
+            <b>Invoice Receipt #{{invoice_number}}</b><br>
+            Billed on: {{invoice_date}}<br>
+            Due on: {{invoice_due_at}}<br>
+            {{#invoice_po_number}}
+            PO Number: {{invoice_po_number}}<br>
+            {{/invoice_po_number}}
+            {{#invoice_net_terms}}
+            Terms: Net-{{invoice_net_terms}}<br>
+            {{/invoice_net_terms}}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+      <p style="margin-bottom: 10px;">We have not received payment for your subscription that was due on {{invoice_due_at}}. We hope this is just a mixup and look forward to resolving this with you quickly.</p>
+      <p style="margin-bottom: 10px;">If you have already sent payment for this invoice, please contact {{company_name}} at <a href="mailto:{{company_email}}" style="color: #AD2329; text-decoration: underline;">{{company_email}}</a> regarding {{invoice_number}} to ensure your payment was received and applied to your account.</p>
+      {{#company_hosted_account_management_enabled?}}
+      <p style="margin-bottom: 10px;">
+        {{#company_hosted_account_management_allow_pay_invoice?}}
+        <a href="{{invoice_guest_view_url}}">Pay your invoice online.</a>
+        {{/company_hosted_account_management_allow_pay_invoice?}}
+        {{^company_hosted_account_management_allow_pay_invoice?}}
+        <a href="{{invoice_guest_view_url}}">View your invoice online.</a>
+        {{/company_hosted_account_management_allow_pay_invoice?}}
+      </p>
+      {{/company_hosted_account_management_enabled?}}
+      <br>
+
+      <table class="invoice_table" cellpadding="10" cellspacing="0" align="center" border="0">
+        <tbody>
+        <tr style="background-color: #f1f1f1;">
+          <td class="column-1" style="text-align: left"><b>Description & Date</b></td>
+          <td class="column-2">Amount</td>
+        </tr>
+        {{#invoice_line_items}}
+        <tr>
+          <td class="column-1" style="text-align: left" align="left">
+            {{line_description}}
+            {{#line_date}}({{{line_date}}}){{/line_date}}
+            {{^line_quantity_is_one?}}x {{line_quantity}}{{/line_quantity_is_one?}}
+          </td>
+          <td class="column-2">{{{line_amount}}}</td>
+        </tr>
+        {{/invoice_line_items}}
+        <tr>
+          <td class="column-1">Subtotal:</td>
+          <td class="column-2">{{invoice_subtotal}}</td>
+        </tr>
+        {{#invoice_has_discount?}}
+        <tr>
+          <td class="column-1">Discount{{#invoice_discounts}}({{coupon_name}}){{/invoice_discounts}}:</td>
+          <td class="column-2">{{{invoice_discount_amount}}}</td>
+        </tr>
+        {{/invoice_has_discount?}}
+
+        {{#invoice_has_tax?}}
+        <tr>
+          <td class="column-1">
+            <strong>
+              {{#invoice_has_vat?}}VAT:{{/invoice_has_vat?}}
+              {{^invoice_has_vat?}}
+              {{invoice_tax_region}} Tax {{invoice_tax_rate}}:
+              {{/invoice_has_vat?}}
+            </strong>
+          </td>
+          <td class="column-2">
+            <strong>{{{invoice_tax_amount}}}</strong>
+          </td>
+        </tr>
+        {{/invoice_has_tax?}}
+
+        <tr>
+          <td class="column-1">Total:</td>
+          <td class="column-2">{{{invoice_total}}}</td>
+        </tr>
+        <tr>
+          <td class="column-1">Paid:</td>
+          <td class="column-2">{{invoice_total_paid}}</td>
+        </tr>
+        <tr style="background-color: #E9E9E9;">
+          <td class="column-1"><b>Total due:</b></td>
+          <td class="column-2">{{{invoice_total_due}}}</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <br>
+
+      <table class="plan_table" cellpadding="10" cellspacing="0" align="center" border="0">
+        <tbody>
+        <tr>
+          <td class="column-1">
+            Total due:<br>
+            <b>{{{invoice_total_due}}}</b>
+          </td>
+          <td class="column-2">
+            Due on:<br>
+            <b>{{invoice_due_at}}</b>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+    </td>
+  </tr>
+  </tbody>
+</table>

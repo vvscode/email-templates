@@ -145,7 +145,7 @@
   <hr size="1" color="#000000" style="margin: 0; padding: 0;">
 
 
-<!-- recurly_subscription_canceled_for_non_payment -->
+<!-- recurly_new_invoice -->
 <!--[if !mso]>-->
 <table class="t-content" cellpadding="0" cellspacing="0" align="center" border="0" style="max-width: 600px; min-width: 540px;">
   <!--<![endif]--><!--[if mso]>
@@ -154,44 +154,124 @@
   <tbody>
   <tr>
     <td class="td-content" valign="top" style="font-size: 14px; line-height: 1.42em; padding-left: 30px; padding-right: 30px;">
-      <h2 class="title" style="color: #AD2329; font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif; font-size: 35px; font-weight: normal; letter-spacing: 0.3px; line-height: 1em; margin: 0; margin-bottom: 29px; margin-top: 32px; text-align: center;">We can't seem to process your credit card</h2>
+      <h2 class="title" style="color: #AD2329; font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif; font-size: 35px; font-weight: normal; letter-spacing: 0.3px; line-height: 1em; margin: 0; margin-bottom: 29px; margin-top: 32px; text-align: center;">Your invoice is past due</h2>
 
       <table class="invoice_info" cellpadding="0" cellspacing="0" align="center" border="0" style="background-color: #E9E9E9; margin-bottom: 20px; padding: 20px; width: 100%;">
         <tbody>
         <tr>
-          <td valign="top" style="font-size: 14px; line-height: 1.42em;">
+          <td style="font-size: 14px; line-height: 1.42em;">
             <b>{{billing_first_name}} {{billing_last_name}}</b><br>
             {{{billing_full_address}}}
           </td>
-          <td align="right" valign="top" style="font-size: 14px; line-height: 1.42em;">
+          <td style="font-size: 14px; line-height: 1.42em;">
             <b>Invoice Receipt #{{invoice_number}}</b><br>
-            {{invoice_date}}
+            Billed on: {{invoice_date}}<br>
+            Due on: {{invoice_due_at}}<br>
+            {{#invoice_po_number}}
+            PO Number: {{invoice_po_number}}<br>
+            {{/invoice_po_number}}
+            {{#invoice_net_terms}}
+            Terms: Net-{{invoice_net_terms}}<br>
+            {{/invoice_net_terms}}
           </td>
         </tr>
         </tbody>
       </table>
 
-      <p style="font-size: 14px; line-height: 1.42em; margin: 0; margin-bottom: 10px;">
-      We are having trouble processing your payment using the {{billing_cc_type}} ending in {{billing_last_four}}.
+      <p style="font-size: 14px; line-height: 1.42em; margin: 0; margin-bottom: 10px;">We have not received payment for your subscription that was due on {{invoice_due_at}}. We hope this is just a mixup and look forward to resolving this with you quickly.</p>
+      <p style="font-size: 14px; line-height: 1.42em; margin: 0; margin-bottom: 10px;">If you have already sent payment for this invoice, please contact {{company_name}} at <a href="mailto:{{company_email}}" style="color: #AD2329; text-decoration: underline;">{{company_email}}</a> regarding {{invoice_number}} to ensure your payment was received and applied to your account.</p>
       {{#company_hosted_account_management_enabled?}}
-      To correct your card details or pay with another card, please update <a href="{{account_hosted_maintenance_url}}" style="color: #AD2329; text-decoration: underline;">your account</a>.
+      <p style="font-size: 14px; line-height: 1.42em; margin: 0; margin-bottom: 10px;">
+        {{#company_hosted_account_management_allow_pay_invoice?}}
+        <a href="{{invoice_guest_view_url}}" style="color: #AD2329; text-decoration: underline;">Pay your invoice online.</a>
+        {{/company_hosted_account_management_allow_pay_invoice?}}
+        {{^company_hosted_account_management_allow_pay_invoice?}}
+        <a href="{{invoice_guest_view_url}}" style="color: #AD2329; text-decoration: underline;">View your invoice online.</a>
+        {{/company_hosted_account_management_allow_pay_invoice?}}
+      </p>
       {{/company_hosted_account_management_enabled?}}
-      </p>
+      <br>
 
-      <p style="font-size: 14px; line-height: 1.42em; margin: 0; margin-bottom: 10px;">
-        Until we are able to resolve this issue, your subscription is canceled due to non-payment.
-      </p>
+      <table class="invoice_table" cellpadding="10" cellspacing="0" align="center" border="0" style="width: 100%;">
+        <tbody>
+        <tr style="background-color: #f1f1f1;">
+          <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: left;"><b>Description & Date</b></td>
+          <td class="column-2" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; font-weight: bold; line-height: 1.42em; text-align: right;">Amount</td>
+        </tr>
+        {{#invoice_line_items}}
+        <tr>
+          <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: left;" align="left">
+            {{line_description}}
+            {{#line_date}}({{{line_date}}}){{/line_date}}
+            {{^line_quantity_is_one?}}x {{line_quantity}}{{/line_quantity_is_one?}}
+          </td>
+          <td class="column-2" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; font-weight: bold; line-height: 1.42em; text-align: right;">{{{line_amount}}}</td>
+        </tr>
+        {{/invoice_line_items}}
+        <tr>
+          <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: right;">Subtotal:</td>
+          <td class="column-2" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; font-weight: bold; line-height: 1.42em; text-align: right;">{{invoice_subtotal}}</td>
+        </tr>
+        {{#invoice_has_discount?}}
+        <tr>
+          <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: right;">Discount{{#invoice_discounts}}({{coupon_name}}){{/invoice_discounts}}:</td>
+          <td class="column-2" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; font-weight: bold; line-height: 1.42em; text-align: right;">{{{invoice_discount_amount}}}</td>
+        </tr>
+        {{/invoice_has_discount?}}
 
-      <p style="font-size: 14px; line-height: 1.42em; margin: 0; margin-bottom: 10px;">
-        We hope this is just a mixup and look forward to resolving this with you quickly.<br>
-        If you have any questions, don't hesitate to contact us at <a href="mailto:{{company_email}}" style="color: #AD2329; text-decoration: underline;">{{company_email}}</a> regarding invoice {{invoice_number}}.
-      </p>
+        {{#invoice_has_tax?}}
+        <tr>
+          <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: right;">
+            <strong>
+              {{#invoice_has_vat?}}VAT:{{/invoice_has_vat?}}
+              {{^invoice_has_vat?}}
+              {{invoice_tax_region}} Tax {{invoice_tax_rate}}:
+              {{/invoice_has_vat?}}
+            </strong>
+          </td>
+          <td class="column-2" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; font-weight: bold; line-height: 1.42em; text-align: right;">
+            <strong>{{{invoice_tax_amount}}}</strong>
+          </td>
+        </tr>
+        {{/invoice_has_tax?}}
+
+        <tr>
+          <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: right;">Total:</td>
+          <td class="column-2" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; font-weight: bold; line-height: 1.42em; text-align: right;">{{{invoice_total}}}</td>
+        </tr>
+        <tr>
+          <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: right;">Paid:</td>
+          <td class="column-2" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; font-weight: bold; line-height: 1.42em; text-align: right;">{{invoice_total_paid}}</td>
+        </tr>
+        <tr style="background-color: #E9E9E9;">
+          <td class="column-1" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; line-height: 1.42em; text-align: right;"><b>Total due:</b></td>
+          <td class="column-2" style="border-bottom-color: #E9E9E9; border-bottom-style: solid; border-bottom-width: 1px; font-size: 14px; font-weight: bold; line-height: 1.42em; text-align: right;">{{{invoice_total_due}}}</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <br>
+
+      <table class="plan_table" cellpadding="10" cellspacing="0" align="center" border="0" style="float: left;">
+        <tbody>
+        <tr>
+          <td class="column-1" style="font-size: 14px; line-height: 1.42em;">
+            Total due:<br>
+            <b>{{{invoice_total_due}}}</b>
+          </td>
+          <td class="column-2" style="font-size: 14px; line-height: 1.42em; padding-left: 50px;">
+            Due on:<br>
+            <b>{{invoice_due_at}}</b>
+          </td>
+        </tr>
+        </tbody>
+      </table>
 
     </td>
   </tr>
   </tbody>
 </table>
-<!-- recurly_subscription_canceled_for_non_payment -->
+<!-- recurly_new_invoice -->
 
 <div style="border-top-width: 1px; border-top-color: #000000; border-top-style: solid; width: 100%; height: 1px; margin-top: 45px; line-height: 1px;">&#160;</div>
 
