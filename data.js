@@ -4,6 +4,7 @@ var DATA_ORIGINAL = {
     "recipient_first_name": "John",
     "recipient_display_name": "John Black",
     "sender_display_name": "Michael Wishnick",
+    "right_capital": "Right Capital specialist",
     "url": "http://url",
     "collection_name": "Pop Art Collection",
     /*invitation_viewing_room*/
