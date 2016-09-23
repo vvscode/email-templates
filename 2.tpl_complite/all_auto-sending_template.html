@@ -450,7 +450,7 @@
   
   <!--New transaction-->
 
-  <!--New transaction-->
+  <!-- password-recovery -->
     <!--[if !mso]>-->
     <table class="t-content" cellpadding="0" cellspacing="0" align="center" border="0" style="max-width: 600px; min-width: 540px;">
     <!--<![endif]--><!--[if mso]>
@@ -475,7 +475,7 @@
     </tr>
     </tbody>
   </table>
-  <!--New transaction-->
+  <!-- password-recovery -->
 
   <!-- new-quote-request.html -->
   <!--[if !mso]>-->
@@ -504,6 +504,66 @@
     </tbody>
   </table>
   <!-- new-quote-request.html -->
+
+  <!-- new-enquiry-simmon-gillespie-studio -->
+  <table class="t-content" cellpadding="0" cellspacing="0" align="center" border="0" style="max-width: 600px; min-width: 540px;">
+    <tbody>
+    <tr>
+      <td class="td-content" valign="top" style="font-size: 14px; line-height: 1.42em; padding-left: 30px; padding-right: 30px;">
+        <h2 class="title" style="color: #AD2329; font-family: Baskerville, Baskerville Old Face, Garamond, Times New Roman, serif; font-size: 35px; font-weight: normal; letter-spacing: 0.3px; line-height: 1em; margin: 0; margin-bottom: 29px; margin-top: 32px; text-align: center;">New enquiry</h2>
+  
+        ​<p style="font-size: 14px; line-height: 1.42em; margin: 0; padding-bottom: 26px;">
+          Dear {{recipient_first_name}}, thank you for your enquiry. A representative from Simon Gillepie Studio will respond as soon as possible.
+        </p>
+  
+        <table class="gallery-table" border="0" cellpadding="0" cellspacing="0" style="width: 100%;">
+          <tr>
+            <td style="font-size: 14px; line-height: 1.42em;">
+              ​
+              {% for collectable in collectables %}
+              <!--[if !mso]>-->
+              <table class="small-cards-table" border="0" cellspacing="0" cellpadding="0" style="display: inline-block; float: left; margin-bottom: 30px; margin-right: 20px; vertical-align: top; width: 240px;">
+                <!--<![endif]--><!--[if mso]>
+                <table class="gallery-item" border="0" cellspacing="0" cellpadding="5" style="padding-bottom: 35px;">
+                <![endif]-->
+                <tr>
+                  <td style="font-size: 14px; line-height: 1.42em;">
+                    <table class="lot-small-card-item" border="0" cellspacing="0" cellpadding="0" style="box-sizing: border-box; height: 80px; width: 100%;">
+                      <tr>
+                        <td class="image-cell-small-card" style="font-size: 14px; line-height: 1.42em; padding-right: 15px; vertical-align: top; width: 80px;">
+                          <a href="{{url}}" target="_blank" style="border-color: #e9e9e9; border-style: solid; border-width: 1px; color: #AD2329; display: block; height: 80px; text-decoration: underline; width: 80px;">
+                            <img src="{{collectable.img}}" alt="image" style="display: block; margin: 0 auto; max-height: 80px; max-width: 80px;">
+                          </a>
+                        </td>
+                        <td class="descr-cell-small-card-not-cut" style="font-size: 14px; line-height: 1.42em;">
+                          <p style="font-size: 13px; line-height: 1.3; margin: 0; width: 140px;"><b style="text-transform: uppercase;">{{collectable.artist_name}}</b></p>
+                          <p style="font-size: 13px; line-height: 1.3; margin: 0; width: 140px;"><i>{{collectable.title}}{%if collectable.year %}, {{collectable.year}}{% endif %}</i></p>
+                          <p style="font-size: 13px; line-height: 1.3; margin: 0; width: 140px;">{{collectable.medium}}</p>
+                          <p style="font-size: 13px; line-height: 1.3; margin: 0; width: 140px;">{{collectable.size}}</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+              {% endfor %}
+              ​
+            </td>
+          </tr>
+        </table>
+        ​
+        <div class="align_center" style="text-align: center;">
+          <div class="btn-wrap" style="margin-top: 35px;">
+            <a href="{{url}}" class="button" target="_blank" style="background-color: #AD2329; border-bottom-width: 10px; border-color: #AD2329; border-left-width: 35px; border-right-width: 35px; border-style: solid; border-top-width: 10px; color: #ffffff; display: inline-block; font-size: 13px; text-align: center; text-decoration: none;">SEE ENQUIRY DETAILS</a>
+          </div>
+        </div>
+        ​
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  
+  <!-- new-enquiry-simmon-gillespie-studio -->
 
   <div style="border-top-width: 1px; border-top-color: #000000; border-top-style: solid; width: 100%; height: 1px; margin-top: 45px; line-height: 1px;">&#160;</div>
   

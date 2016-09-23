@@ -1,0 +1,56 @@
+<table class="t-content" cellpadding="0" cellspacing="0" align="center" border="0">
+  <tbody>
+  <tr>
+    <td class="td-content" valign="top">
+      <h2 class="title">New enquiry</h2>
+
+      ​<p style="padding-bottom: 26px;">
+        Dear {{recipient_first_name}}, thank you for your enquiry. A representative from Collectrium will respond as soon as possible.
+      </p>
+
+      <table class="gallery-table" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td>
+            ​
+            {% for collectable in collectables %}
+            <!--[if !mso]>-->
+            <table class="small-cards-table" border="0" cellspacing="0" cellpadding="0">
+              <!--<![endif]--><!--[if mso]>
+              <table class="gallery-item" border="0" cellspacing="0" cellpadding="5" style="padding-bottom: 35px;">
+              <![endif]-->
+              <tr>
+                <td>
+                  <table class="lot-small-card-item" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                      <td class="image-cell-small-card">
+                        <a href="{{url}}" target="_blank">
+                          <img src="{{collectable.img}}" alt="image" />
+                        </a>
+                      </td>
+                      <td class="descr-cell-small-card-not-cut">
+                        <p><b style="text-transform: uppercase;">{{collectable.artist_name}}</b></p>
+                        <p><i>{{collectable.title}}{%if collectable.year %}, {{collectable.year}}{% endif %}</i></p>
+                        <p>{{collectable.medium}}</p>
+                        <p>{{collectable.size}}</p>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+            {% endfor %}
+            ​
+          </td>
+        </tr>
+      </table>
+      ​
+      <div class="align_center">
+        <div class="btn-wrap">
+          <a href="{{url}}" class="button" target="_blank">SEE ENQUIRY DETAILS</a>
+        </div>
+      </div>
+      ​
+    </td>
+  </tr>
+  </tbody>
+</table>
