@@ -351,17 +351,23 @@ td[class="image-cell-small-card"] a img{
     max-height: 80px;
     margin: 0 auto;
 }
+
 td[class="descr-cell-small-card"]{
     vertical-align: top;
 }
-td[class="descr-cell-small-card"] p{
+
+td[class="descr-cell-small-card"] p,
+td[class="descr-cell-small-card-not-cut"] p{
     width: 140px;
     font-size: 13px;
     line-height: 1.3;
+}
+td[class="descr-cell-small-card"] p {
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 }
+
 /* invitation-viewing-room.html */
 table[class="gallery-table"]{
     width: 100%;
