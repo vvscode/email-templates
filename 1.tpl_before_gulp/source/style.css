@@ -337,23 +337,31 @@ td[class="image-cell-small-card"]{
     padding-right: 15px;
     vertical-align: top;
 }
-td[class="image-cell-small-card"] a{
-    display: block;
+td[class="image-cell-small-card"] div,
+td[class="image-cell-small-card"] a {
+    display: table-cell;
+    vertical-align: middle;
     width: 80px;
     height: 80px;
     border-width: 1px;
     border-style: solid;
     border-color: #e9e9e9;
 }
-td[class="image-cell-small-card"] a img{
+td[class="image-cell-small-card"] div img,
+td[class="image-cell-small-card"] a img {
     display: block;
     max-width: 80px;
     max-height: 80px;
     margin: 0 auto;
 }
 
-td[class="descr-cell-small-card"]{
+td[class="descr-cell-small-card"],
+td[class="descr-cell-small-card-not-cut"] {
     vertical-align: top;
+}
+
+td[class="descr-cell-small-card-not-cut"] {
+    word-break: break-word;
 }
 
 td[class="descr-cell-small-card"] p,
