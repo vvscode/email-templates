@@ -2,5 +2,5 @@
 node_modules
 
 # compiled output
-#/2.tpl_complite
-#/3.tpl_complite_simple_content
+2.tpl_complite
+3.tpl_complite_simple_content
