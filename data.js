@@ -10,7 +10,7 @@ var DATA_ORIGINAL = {
     /*invitation_viewing_room*/
     "collectables": [
         {
-            "img": 'http://placehold.it/80x80',
+            "img": 'http://placehold.it/40x80',
             "artist_name": 'Roy Lichtenstein (0000-8888)',
             "title": 'Imperfect 67” x 79 7/8” from Imperfect series”',
             "description": "simple",
@@ -28,7 +28,7 @@ var DATA_ORIGINAL = {
             "estimate": "Est. $123,700-144,800"
         },
         {
-            "img": 'http://placehold.it/80x80',
+            "img": 'http://placehold.it/80x40',
             "artist_name": 'Pablo Picasso',
             "title": 'Portrait of a Bearded Man Wearing a Hat',
             "medium": 'aquatint on wove paper',
