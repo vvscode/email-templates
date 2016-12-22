@@ -4,9 +4,13 @@ var DATA_ORIGINAL = {
     "recipient_first_name": "John",
     "recipient_display_name": "John Black",
     "sender_display_name": "Michael Wishnick",
+    "artist_name_full": "Jeff Koons (B. 1955) Cut Out, 2000",
     "right_capital": "Right Capital specialist",
     "url": "http://url",
     "collection_name": "Pop Art Collection",
+    "description_1": "Ink and color on paper",
+    "description_2": "18 7/8 x 70 1/2in (48 x 179.1cm)",
+    "auction_house": "Christie's",
     /*invitation_viewing_room*/
     "collectables": [
         {
