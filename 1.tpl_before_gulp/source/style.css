@@ -85,6 +85,12 @@ h3[class="sub-title"] {
 .align_center {
     text-align : center;
 }
+.align_left {
+    text-align: left;
+}
+.align_right {
+    text-align : right;
+}
 
 [class="btn-wrap"]{
     margin-top : 35px;
